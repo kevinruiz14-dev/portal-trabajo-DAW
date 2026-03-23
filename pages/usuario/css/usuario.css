@@ -347,11 +347,11 @@ body {
 /* ---- ESTILOS PARA LA PANTALLA DE HABILIDADES ---- */
 
 .bg-habilidades-fondo {
-    background-color: #fcf1f9; /* Color rosita muy pálido del fondo */
+    background-color: #fcf1f9; 
 }
 
 .header-habilidades {
-    background-color: #b18eb6; /* Morado del header */
+    background-color: #b18eb6;
     padding: 15px 30px;
     border-bottom: 1px solid #9e7f1033;
 }
