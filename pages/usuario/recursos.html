@@ -41,10 +41,14 @@
             <div class="navbar-nav">
               <a class="custom-nav-link" href="index.html">Explorar empleos</a>
               <a class="custom-nav-link" href="empresas.html">Empresas</a>
-              <a class="custom-nav-link active" href="recursos.html">Recursos</a>
+              <a class="custom-nav-link active" href="recursos.html"
+                >Recursos</a
+              >
             </div>
           </div>
-          <div class="d-flex align-items-center user-pill rounded-pill ms-auto ms-lg-0">
+          <div
+            class="d-flex align-items-center user-pill rounded-pill ms-auto ms-lg-0"
+          >
             <div class="dropdown">
               <a
                 href="#"
@@ -55,8 +59,117 @@
                 <i class="bi bi-bell bell-icon"></i>
                 <span class="notification-badge">9</span>
               </a>
-              <ul class="dropdown-menu dropdown-menu-end"></ul>
+              <!-- Seccion de notificaciones -->
+              <ul
+                class="dropdown-menu dropdown-menu-end p-3 custom-dropdown-noti"
+                style="
+                  width: 420px;
+                  background-color: #cfcbda;
+                  border-radius: 15px;
+                "
+              >
+                <div class="d-flex align-items-center mb-3 position-relative">
+                  <a
+                    href="#"
+                    class="text-dark text-decoration-none"
+                    data-bs-toggle="dropdown"
+                  >
+                    <i class="bi bi-box-arrow-left" style="font-size: 28px"></i>
+                  </a>
+                  <div
+                    class="bg-white rounded-3 px-4 py-2 mx-auto fw-bold"
+                    style="
+                      font-size: 18px;
+                      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+                    "
+                  >
+                    Notificaciones y Alertas
+                  </div>
+                </div>
+
+                <li
+                  class="card rounded-3 border-0 mb-3 p-3 position-relative"
+                  style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1)"
+                >
+                  <span
+                    class="position-absolute text-dark fw-bold"
+                    style="
+                      top: 10px;
+                      left: 15px;
+                      cursor: pointer;
+                      font-size: 14px;
+                    "
+                    >X</span
+                  >
+
+                  <div class="mt-2" style="padding-left: 20px">
+                    <h6 class="fw-bold mb-1" style="font-size: 15px">
+                      Diseñador Gráfico Creativa Studio
+                    </h6>
+                    <p class="mb-2" style="font-size: 14px; color: #1c1c1c">
+                      Se ha publicado una nueva vacante que coincide con tu
+                      perfil.
+                    </p>
+
+                    <div class="d-flex justify-content-between align-items-end">
+                      <div>
+                        <div
+                          class="mb-1"
+                          style="font-size: 13px; color: #1c1c1c"
+                        >
+                          <i class="bi bi-geo-alt-fill text-danger me-1"></i>
+                          Santa Ana
+                        </div>
+                        <div style="font-size: 13px; color: #1c1c1c">
+                          <i class="bi bi-clock me-1 text-danger"></i> Hace 5
+                          minutos
+                        </div>
+                      </div>
+                      <button class="btn btn-noti rounded-3 px-3 py-1">
+                        Postularme
+                      </button>
+                    </div>
+                  </div>
+                </li>
+
+                <li
+                  class="card rounded-3 border-0 p-3 position-relative"
+                  style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1)"
+                >
+                  <span
+                    class="position-absolute text-dark fw-bold"
+                    style="
+                      top: 10px;
+                      left: 15px;
+                      cursor: pointer;
+                      font-size: 14px;
+                    "
+                    >X</span
+                  >
+
+                  <div class="mt-1" style="padding-left: 20px">
+                    <h6 class="fw-bold mb-1" style="font-size: 15px">
+                      Actualiza tu perfil
+                      <span class="fw-normal"
+                        >para recibir más oportunidades</span
+                      >
+                    </h6>
+                    <p class="mb-3" style="font-size: 14px; color: #1c1c1c">
+                      Tu perfil está incompleto. Completar tu información
+                      profesional puede ayudarte a recibir más ofertas de empleo
+                      que coincidan con tus habilidades y experiencia.
+                    </p>
+
+                    <div class="text-end">
+                      <button class="btn btn-noti rounded-3 px-4 py-1">
+                        Actualizar
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
+            <!-- Fin de seccion de notificaciones -->
             <div class="pill-divider"></div>
             <div class="dropdown">
               <a
@@ -69,19 +182,29 @@
               </a>
               <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
                 <li>
-                  <a class="dropdown-item" href="#"><i class="bi bi-person"></i> Mi perfil</a>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-person"></i> Mi perfil</a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#"><i class="bi bi-hand-index-thumb"></i> Mis Postulaciones</a>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-hand-index-thumb"></i> Mis Postulaciones</a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#"><i class="bi bi-heart"></i> Mis Favoritos</a>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-heart"></i> Mis Favoritos</a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#"><i class="bi bi-star"></i> Valoraciones de empresa</a>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-star"></i> Valoraciones de empresa</a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#"><i class="bi bi-power"></i> Cerrar sesión</a>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-power"></i> Cerrar sesión</a
+                  >
                 </li>
               </ul>
             </div>
@@ -89,6 +212,549 @@
         </div>
       </nav>
     </header>
+
+    <main class="container mt-4 mb-5">
+      <div
+        class="bg-white p-4 p-md-5 mx-auto"
+        style="border-radius: 30px; border: 1px solid #b5b5b5; max-width: 900px"
+      >
+        <h1 class="mb-3">Tips y Consejos</h1>
+        <p class="mb-4 text-dark" style="font-size: 18px">
+          Recursos útiles para mejorar tus habilidades y conseguir el trabajo
+          ideal.
+        </p>
+
+        <ul
+          class="nav nav-pills mb-5 d-flex flex-wrap gap-3"
+          id="pills-tab"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link btn-filtro active"
+              id="pills-todo-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-todo"
+              type="button"
+              role="tab"
+              aria-selected="true"
+            >
+              Todo
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link btn-filtro"
+              id="pills-habilidades-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-habilidades"
+              type="button"
+              role="tab"
+              aria-selected="false"
+            >
+              Habilidades
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link btn-filtro"
+              id="pills-curriculum-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-curriculum"
+              type="button"
+              role="tab"
+              aria-selected="false"
+            >
+              Curriculum
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link btn-filtro"
+              id="pills-entrevista-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-entrevista"
+              type="button"
+              role="tab"
+              aria-selected="false"
+            >
+              Entrevista
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="pills-todo"
+            role="tabpanel"
+          >
+            <div class="row g-4">
+              <div class="col-12 col-md-6">
+                <div class="card card-recurso rounded-0 h-100">
+                  <div class="position-relative">
+                    <img
+                      src=""
+                      class="card-img-top rounded-0 img-recurso"
+                      alt=""
+                    />
+                    <i
+                      class="bi bi-youtube text-danger bg-white icono-play"
+                    ></i>
+                  </div>
+                  <div class="card-body p-4 d-flex flex-column">
+                    <h4 class="mb-4" style="font-size: 20px">
+                      Como hacer un buen curriculum Vitae
+                    </h4>
+                    <div class="d-flex align-items-center mb-2 mt-auto">
+                      <i
+                        class="bi bi-play-circle-fill text-danger fs-3 me-2"
+                      ></i>
+                      <span class="text-dark" style="font-size: 14px"
+                        >YouTube</span
+                      >
+                    </div>
+                    <p class="text-dark mb-4" style="font-size: 13px">
+                      50k visitas - 7 min
+                    </p>
+                    <div class="text-center">
+                      <button class="btn btn-recurso w-75 py-2">
+                        Ver video
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="card card-recurso rounded-0 h-100">
+                  <div class="position-relative">
+                    <img
+                      src=""
+                      class="card-img-top rounded-0 img-recurso"
+                      alt=""
+                    />
+                    <i
+                      class="bi bi-youtube text-danger bg-white icono-play"
+                    ></i>
+                  </div>
+                  <div class="card-body p-4 d-flex flex-column">
+                    <h4 class="mb-4" style="font-size: 20px">
+                      Como destacar en entrevistas de trabajo
+                    </h4>
+                    <div class="d-flex align-items-center mb-2 mt-auto">
+                      <i
+                        class="bi bi-play-circle-fill text-danger fs-3 me-2"
+                      ></i>
+                      <span class="text-dark" style="font-size: 14px"
+                        >YouTube</span
+                      >
+                    </div>
+                    <p class="text-dark mb-4" style="font-size: 13px">
+                      89k visitas - 12 min
+                    </p>
+                    <div class="text-center">
+                      <button class="btn btn-recurso w-75 py-2">
+                        Ver video
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="card card-recurso rounded-0 h-100">
+                  <img
+                    src=""
+                    class="card-img-top rounded-0 img-recurso"
+                    alt=""
+                  />
+                  <div class="card-body p-4 d-flex flex-column">
+                    <h4 class="mb-4 text-center" style="font-size: 20px">
+                      Errores comunes en entrevistas laborales
+                    </h4>
+                    <div
+                      class="d-flex justify-content-center align-items-center mb-2 mt-auto"
+                    >
+                      <i
+                        class="bi bi-linkedin fs-3 me-2"
+                        style="color: #004b7c"
+                      ></i>
+                      <span class="text-dark" style="font-size: 14px"
+                        >Linkedin</span
+                      >
+                    </div>
+                    <p
+                      class="text-dark mb-4 text-center"
+                      style="font-size: 13px"
+                    >
+                      Articulo
+                    </p>
+                    <div class="text-center">
+                      <button class="btn btn-recurso w-75 py-2">
+                        Leer articulo
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="card card-recurso rounded-0 h-100">
+                  <div class="position-relative">
+                    <img
+                      src=""
+                      class="card-img-top rounded-0 img-recurso"
+                      alt=""
+                    />
+                    <i
+                      class="bi bi-youtube text-danger bg-white icono-play"
+                    ></i>
+                  </div>
+                  <div class="card-body p-4 d-flex flex-column">
+                    <h4 class="mb-4" style="font-size: 20px">
+                      Aprende como resaltar tus habilidades
+                    </h4>
+                    <div class="d-flex align-items-center mb-2 mt-auto">
+                      <i
+                        class="bi bi-play-circle-fill text-danger fs-3 me-2"
+                      ></i>
+                      <span class="text-dark" style="font-size: 14px"
+                        >YouTube</span
+                      >
+                    </div>
+                    <p class="text-dark mb-4" style="font-size: 13px">
+                      180k visitas - 4 min
+                    </p>
+                    <div class="text-center">
+                      <button class="btn btn-recurso w-75 py-2">
+                        Ver video
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="card card-recurso rounded-0 h-100">
+                  <div class="position-relative">
+                    <img
+                      src=""
+                      class="card-img-top rounded-0 img-recurso"
+                      alt=""
+                    />
+                    <i
+                      class="bi bi-youtube text-danger bg-white icono-play"
+                    ></i>
+                  </div>
+                  <div class="card-body p-4 d-flex flex-column">
+                    <h4 class="mb-4" style="font-size: 20px">
+                      La habilidad de saber informatica
+                    </h4>
+                    <div class="d-flex align-items-center mb-2 mt-auto">
+                      <i
+                        class="bi bi-play-circle-fill text-danger fs-3 me-2"
+                      ></i>
+                      <span class="text-dark" style="font-size: 14px"
+                        >YouTube</span
+                      >
+                    </div>
+                    <p class="text-dark mb-4" style="font-size: 13px">
+                      89k visitas - 12 min
+                    </p>
+                    <div class="text-center">
+                      <button class="btn btn-recurso w-75 py-2">
+                        Ver video
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="card card-recurso rounded-0 h-100">
+                  <img
+                    src=""
+                    class="card-img-top rounded-0 img-recurso"
+                    alt=""
+                  />
+                  <div class="card-body p-4 d-flex flex-column">
+                    <h4 class="mb-4 text-center" style="font-size: 20px">
+                      Habilidades más solicitadas 2026
+                    </h4>
+                    <div
+                      class="d-flex justify-content-center align-items-center mb-2 mt-auto"
+                    >
+                      <i
+                        class="bi bi-linkedin fs-3 me-2"
+                        style="color: #004b7c"
+                      ></i>
+                      <span class="text-dark" style="font-size: 14px"
+                        >Linkedin</span
+                      >
+                    </div>
+                    <p
+                      class="text-dark mb-4 text-center"
+                      style="font-size: 13px"
+                    >
+                      Articulo
+                    </p>
+                    <div class="text-center">
+                      <button class="btn btn-recurso w-75 py-2">
+                        Leer artculo
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="pills-habilidades" role="tabpanel">
+            <div class="row g-4">
+              <div class="col-12 col-md-6">
+                <div class="card card-recurso rounded-0 h-100">
+                  <div class="position-relative">
+                    <img
+                      src=""
+                      class="card-img-top rounded-0 img-recurso"
+                      alt=""
+                    />
+                    <i
+                      class="bi bi-youtube text-danger bg-white icono-play"
+                    ></i>
+                  </div>
+                  <div class="card-body p-4 d-flex flex-column">
+                    <h4 class="mb-4" style="font-size: 20px">
+                      Aprende como resaltar tus habilidades
+                    </h4>
+                    <div class="d-flex align-items-center mb-2 mt-auto">
+                      <i
+                        class="bi bi-play-circle-fill text-danger fs-3 me-2"
+                      ></i>
+                      <span class="text-dark" style="font-size: 14px"
+                        >YouTube</span
+                      >
+                    </div>
+                    <p class="text-dark mb-4" style="font-size: 13px">
+                      180k visitas - 4 min
+                    </p>
+                    <div class="text-center">
+                      <button class="btn btn-recurso w-75 py-2">
+                        Ver video
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="card card-recurso rounded-0 h-100">
+                  <div class="position-relative">
+                    <img
+                      src=""
+                      class="card-img-top rounded-0 img-recurso"
+                      alt=""
+                    />
+                    <i
+                      class="bi bi-youtube text-danger bg-white icono-play"
+                    ></i>
+                  </div>
+                  <div class="card-body p-4 d-flex flex-column">
+                    <h4 class="mb-4" style="font-size: 20px">
+                      La habilidad de saber informatica
+                    </h4>
+                    <div class="d-flex align-items-center mb-2 mt-auto">
+                      <i
+                        class="bi bi-play-circle-fill text-danger fs-3 me-2"
+                      ></i>
+                      <span class="text-dark" style="font-size: 14px"
+                        >YouTube</span
+                      >
+                    </div>
+                    <p class="text-dark mb-4" style="font-size: 13px">
+                      89k visitas - 12 min
+                    </p>
+                    <div class="text-center">
+                      <button class="btn btn-recurso w-75 py-2">
+                        Ver video
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="card card-recurso rounded-0 h-100">
+                  <img
+                    src=""
+                    class="card-img-top rounded-0 img-recurso"
+                    alt=""
+                  />
+                  <div class="card-body p-4 d-flex flex-column">
+                    <h4 class="mb-4 text-center" style="font-size: 20px">
+                      Habilidades más solicitadas 2026
+                    </h4>
+                    <div
+                      class="d-flex justify-content-center align-items-center mb-2 mt-auto"
+                    >
+                      <i
+                        class="bi bi-linkedin fs-3 me-2"
+                        style="color: #004b7c"
+                      ></i>
+                      <span class="text-dark" style="font-size: 14px"
+                        >Linkedin</span
+                      >
+                    </div>
+                    <p
+                      class="text-dark mb-4 text-center"
+                      style="font-size: 13px"
+                    >
+                      Articulo
+                    </p>
+                    <div class="text-center">
+                      <button class="btn btn-recurso w-75 py-2">
+                        Leer artculo
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="pills-curriculum" role="tabpanel">
+            <div class="row g-4">
+              <div class="col-12 col-md-6">
+                <div class="card card-recurso rounded-0 h-100">
+                  <div class="position-relative">
+                    <img
+                      src=""
+                      class="card-img-top rounded-0 img-recurso"
+                      alt=""
+                    />
+                    <i
+                      class="bi bi-youtube text-danger bg-white icono-play"
+                    ></i>
+                  </div>
+                  <div class="card-body p-4 d-flex flex-column">
+                    <h4 class="mb-4" style="font-size: 20px">
+                      Como hacer un buen curriculum Vitae
+                    </h4>
+                    <div class="d-flex align-items-center mb-2 mt-auto">
+                      <i
+                        class="bi bi-play-circle-fill text-danger fs-3 me-2"
+                      ></i>
+                      <span class="text-dark" style="font-size: 14px"
+                        >YouTube</span
+                      >
+                    </div>
+                    <p class="text-dark mb-4" style="font-size: 13px">
+                      50k visitas - 7 min
+                    </p>
+                    <div class="text-center">
+                      <button class="btn btn-recurso w-75 py-2">
+                        Ver video
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="pills-entrevista" role="tabpanel">
+            <div class="row g-4">
+              <div class="col-12 col-md-6">
+                <div class="card card-recurso rounded-0 h-100">
+                  <div class="position-relative">
+                    <img
+                      src=""
+                      class="card-img-top rounded-0 img-recurso"
+                      alt=""
+                    />
+                    <i
+                      class="bi bi-youtube text-danger bg-white icono-play"
+                    ></i>
+                  </div>
+                  <div class="card-body p-4 d-flex flex-column">
+                    <h4 class="mb-4" style="font-size: 20px">
+                      Como destacar en entrevistas de trabajo
+                    </h4>
+                    <div class="d-flex align-items-center mb-2 mt-auto">
+                      <i
+                        class="bi bi-play-circle-fill text-danger fs-3 me-2"
+                      ></i>
+                      <span class="text-dark" style="font-size: 14px"
+                        >YouTube</span
+                      >
+                    </div>
+                    <p class="text-dark mb-4" style="font-size: 13px">
+                      89k visitas - 12 min
+                    </p>
+                    <div class="text-center">
+                      <button class="btn btn-recurso w-75 py-2">
+                        Ver video
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="card card-recurso rounded-0 h-100">
+                  <img
+                    src=""
+                    class="card-img-top rounded-0 img-recurso"
+                    alt=""
+                  />
+                  <div class="card-body p-4 d-flex flex-column">
+                    <h4 class="mb-4 text-center" style="font-size: 20px">
+                      Errores comunes en entrevistas laborales
+                    </h4>
+                    <div
+                      class="d-flex justify-content-center align-items-center mb-2 mt-auto"
+                    >
+                      <i
+                        class="bi bi-linkedin fs-3 me-2"
+                        style="color: #004b7c"
+                      ></i>
+                      <span class="text-dark" style="font-size: 14px"
+                        >Linkedin</span
+                      >
+                    </div>
+                    <p
+                      class="text-dark mb-4 text-center"
+                      style="font-size: 13px"
+                    >
+                      Articulo
+                    </p>
+                    <div class="text-center">
+                      <button class="btn btn-recurso w-75 py-2">
+                        Leer articulo
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="fondo-negro pt-4 pb-3 mt-5">
+      <div class="container-fluid pe-4">
+        <div class="row text-center">
+          <div class="col-12 mb-3">
+            <img src="" alt="Logo JM" width="130" style="margin: 0 auto" />
+          </div>
+        </div>
+        <div class="row align-items-end mb-1">
+          <div class="col-md-4 d-none d-md-block"></div>
+          <div class="col-12 col-md-4 text-center copy-text mb-4 mb-md-0">
+            <span class="color-destaque">©2025</span>
+            <span class="texto-gris">www.Job - match.com</span>
+          </div>
+          <div class="col-12 col-md-4 text-center text-md-end caja-links">
+            <a href="#" class="link-pie d-block">Politicas de privacidad</a>
+            <a href="#" class="link-pie d-block">Términos y condiciones</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
