@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Favoritos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body style="background-color: #d8cee8;"> 
+
+  <div class="container p-4">
+    <div>
+      <i class="bi bi-arrow-left-circle fs-2"></i>
+    </div>
+
+    <!-- Grupo de botones -->
+    <div class="d-flex justify-content-center my-3">
+      <div class="d-flex bg-white border rounded-4 shadow-sm px-2 py-1" style="max-width:600px;">
+        
+        <button class="btn d-flex rounded-4 d-flex align-items-center justify-content-center" style="color:#000;">
+          <i class="bi bi-person me-2"></i> Mi perfil
+        </button>
+
+        <button class="btn flex-fill rounded-4 d-flex align-items-center justify-content-center" style="color:#000;">
+          <i class="bi bi-hand-index-thumb me-2"></i> Mis Postulaciones
+        </button>
+
+        <button class="btn d-flex rounded-4 d-flex align-items-center justify-content-center text-dark" 
+          style="background-color:#a988b3;">
+          <i class="bi bi-heart me-2"></i> Mis Favoritos
+        </button>
+      </div>
+    </div>
+    
+    <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-start" style="width: 40%;">
+        <button class="btn rounded-4 px-4 mb-4" style="border: 1px solid #000; background-color: white;">
+          Mis Favoritos
+        </button>
+      </div>
+    </div>
+
+  <div class="container py-2">
+    <div class="row justify-content-center ">
+
+      <div class="col-md-6">
+        <div class="bg-white rounded-4 p-5 d-flex flex-column justify-content-start" 
+             style="border: 1px solid #000; min-height: 350px;">
+
+          <div class="bg-white rounded-4 p-3 mb-3" style="border: 1px solid #000;">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <h5 class="fw-bold mb-3">Cajero Administrador</h5>
+                <p class="text-secondary mb-3">Deposito Universal, SA DE CV</p>
+                <p class="text-secondary mb-3">Santa Ana, Santa Ana</p>
+              </div>
+              <img src="./multimedia/heart.png" width="55px">
+            </div>
+            <div class="text-end">
+              <button class="btn border-0 rounded-4 px-4 d-flex" 
+                      style="background-color:#a988b3; color:black; font-weight:600;">
+                Postularme
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class=" col-12 col-md-3 mb-4">
+        <div class="bg-white rounded-4 p-4 text-center" style="border: 1px solid #000; min-height: 350px;">
+          <img src="./multimedia/favoritos1.png" width="150px">
+          <div class="mt-4">
+            <button class="btn border-0 rounded-pill px-4 py-2" 
+                    style="background-color:#a988b3; color:black; font-weight:600;">
+              Explorar Ofertas
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="./js/usuario-monse.js"></script>
+  </body>
+</html>
+
