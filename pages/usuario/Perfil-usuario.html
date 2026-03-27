@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body style="background-color: #d8cee8;"> 
+
+  <div class="container p-4">
+    <div>
+      <i class="bi bi-arrow-left-circle fs-2"></i>
+    </div>
+
+    <!-- Grupo de botones -->
+    <div class="d-flex justify-content-center my-3 ">
+      <div class="d-flex bg-white border rounded-4 shadow-sm px-4 py-2" style="max-width:600px;">
+        
+        <!-- Botón 1 -->
+        <button class="btn flex-fill rounded-4 d-flex align-items-center justify-content-center text-dark" 
+          style="background-color:#a988b3;">
+          <i class="bi bi-person me-2"></i> Mi perfil
+        </button>
+
+        <!-- Botón 2 -->
+        <button class="btn flex-fill rounded-4 d-flex align-items-center justify-content-center" style="color:#000;">
+          <i class="bi bi-heart me-2"></i> Mis Postulaciones
+        </button>
+
+        <!-- Botón 3 -->
+        <button class="btn flex-fill rounded-4 d-flex align-items-center justify-content-center" style="color:#000;">
+          <i class="bi bi-heart me-2"></i> Mis Favoritos
+        </button>
+      </div>
+    </div>
+    
+
+    <div class="d-flex justify-content-center">
+      <div class="" style="width: 95%;">
+        <button class="btn rounded-4 mb-4 px-5 py-2 fs-6" style="border: 1px solid #000; background-color: white;">
+          Mi Perfil
+        </button>
+      </div>
+    </div>
+
+<section class="p-10">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-7 ms-auto">
+                <div class="bg-white rounded-4 p-4 text-start" style="border: 1px solid #000; min-height: 350px;">
+                    <div class="card-body text-start rounded-4 p-4 text-start">
+
+
+                        <div class="d-flex align-items-start mb-3">
+                            <img src="./multimedia/perfil.png" width="80px" class="me-3">
+                            <div>
+                               <h5>
+                                <span id="nombre">Monserrat Barillas</span>
+                                <i class="bi bi-pencil-square text-primary ms-3"
+                                    style="font-size:1.6rem; cursor:pointer;"
+                                    onclick="editarPerfil()"></i>
+                                </h5>
+
+                                <p id="ciudad">Santa Ana</p>
+
+                                <p class="text-start">
+                                <i class="bi bi-envelope me-1"></i>
+                                <span id="correo">monsebarillas28@gmail.com</span>
+
+                                <i class="bi bi-telephone ms-2 me-2"></i>
+                                <span id="telefono">+503-60703230</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div id="formPerfil" style="display:none; background:#fff; padding:15px; border-radius:15px; margin-top:10px;">
+
+                        <h5>Editar Perfil</h5>
+
+                        <input type="text" id="editNombre" class="form-control mb-2" placeholder="Nombre">
+                        <input type="text" id="editCiudad" class="form-control mb-2" placeholder="Ciudad">
+                        <input type="text" id="editCorreo" class="form-control mb-2" placeholder="Correo">
+                        <input type="text" id="editTelefono" class="form-control mb-2" placeholder="Teléfono">
+
+                        <button class="btn btn-success w-100" onclick="guardarPerfil()">Guardar cambios</button>
+
+                        </div>
+                        <h3>
+                        Experiencias laborales
+                        </h3>
+
+                        <div id="exp-texto">
+                        <p>Analista de Sistemas</p>
+                        <p>Detección de fallos</p>
+                        </div>
+
+                        <div id="exp-editar" style="display:none;">
+                        <input type="text" id="inputPuesto" class="form-control mb-2">
+                        <textarea id="inputDesc" class="form-control mb-2"></textarea>
+                        </div>
+
+                        <h3>Estudios
+                            <i class="bi bi-pencil text-primary ms-5"></i>
+                        </h3>
+                        <p>Bachillerato/Educación Media</p>
+                        <p>Colegio Juan Napier Chalchuapa<br>Enero 2020- Diciembre 2022</p>
+
+                        <h3>Conocimientos</h3>
+                        <button type="button" class="btn btn-outline-secondary text-primary rounded-4 mb-3 me-2">Ventas
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary text-primary rounded-4 mb-3 me-2">Inventario
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary text-primary rounded-4 mb-3">Añadir
+                            <i class="bi bi-plus"></i>
+                        </button>
+
+                        <h3>Desplazamiento y movilidad
+                            <i class="bi bi-pencil text-primary ms-5"></i>
+                        </h3>
+                        <p><i class="bi bi-circle-fill text-primary"></i> Disponibilidad para viajar</p>
+                        <p><i class="bi bi-circle-fill text-primary"></i> Disponibilidad para cambiar de residencia</p>
+                        <p><i class="bi bi-circle-fill text-primary"></i> No tengo vehiculo propio</p>
+                    </div>
+                </div>
+            </div>
+          
+
+        <div class="col-md-5 ms-auto">
+
+
+            <div class="bg-white rounded-4 p-4" style="border:1px solid #000;">
+            <h5><b>Estadísticas del Perfil:</b></h5>
+
+            <p><b>Vistas:</b> 300</p>
+            <p><b>Solicitudes Enviadas:</b> 100</p>
+            <p><b>Solicitudes Recibidas:</b> 50</p>
+
+            <hr>
+
+            <h6><b>Aplicaciones Recientes:</b></h6>
+
+            <p>
+                Super Selectos <br>
+                12/02/2026
+                <span class="badge bg-warning text-dark ms-2">Pendiente</span>
+            </p>
+
+            <p>
+                Librería Karlita <br>
+                09/03/2026
+                <span class="badge bg-danger ms-2">Rechazada</span>
+            </p>
+
+            <button class="btn w-100 mt-3" style="background:#a988b3;">
+                Ver más
+            </button>
+            </div>
+        </div>
+    </div>
+  </section>
+   <script src="./js/Usuario.js"></script>
+  </body>
+</html>
