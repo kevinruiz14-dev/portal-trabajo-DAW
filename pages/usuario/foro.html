@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro de discusion</title>
+    <link rel="stylesheet" href="./css/usuario.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+</head>
+<body class="bg-foro-fondo">
+    <main class="container py-5">
+      
+      <div class="row mb-5 align-items-center">
+        <div class="col-md-1 d-none d-md-block"></div>
+        
+        <div class="col-12 col-md-10 position-relative text-center">
+          <a href="#" class="text-dark position-absolute start-0 top-50 translate-middle-y text-decoration-none ms-2">
+            <i class="bi bi-box-arrow-left fw-bold" style="font-size: 40px; line-height: 1;"></i>
+          </a>
+          <h1 class="h3 mb-0" style="font-weight: 400; color: #555555;">Foro de discusión</h1>
+        </div>
+        
+        <div class="col-md-1 d-none d-md-block"></div>
+      </div>
+
+      <div class="row justify-content-center gap-4">
+        
+        <div class="col-12 col-md-5 col-lg-4 d-flex">
+          <div class="card card-foro-cust w-100">
+            <div class="card-body p-4 p-lg-5 d-flex flex-column">
+              <h2 class="h5 mb-1" style="font-weight: 800; color: #000;">Preguntas destacadas</h2>
+              <p class="text-muted mb-4" style="font-size: 14px; font-weight: 700;">Lo mas comentado de la semana en la comunidad</p>
+              
+              <div class="d-grid gap-2 mb-4">
+                <a href="#" class="link-pregunta text-dark text-decoration-none fw-bold" style="font-size: 16px;">¡Cual es tu experiencia laboral?</a>
+                <a href="#" class="link-pregunta text-dark text-decoration-none fw-bold" style="font-size: 16px;">¡Qué expectativas tienes de la empresa?</a>
+                <a href="#" class="link-pregunta text-dark text-decoration-none fw-bold" style="font-size: 16px;">Cuentanos algunos tips para entrevistas</a>
+              </div>
+              
+              <p class="text-muted mt-2 mb-0" style="font-size: 15px; font-weight: 700;">
+                ¿No encuentras lo que buscas? 
+                <a href="#" style="color: #b79cc8; text-decoration: none;">Inicia un nuevo debate</a>
+              </p>
+
+              <div class="text-center mt-auto pt-5">
+                <button type="button" class="btn btn-foro px-5">Ver todas</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-5 col-lg-4 d-flex">
+          <div class="card card-foro-cust w-100 h-100 overflow-hidden">
+            <div class="py-3 px-4 text-center" style="background-color: #d7d7d7; border-bottom: 1px solid #5a5a5a;">
+              <h2 class="h6 m-0" style="font-weight: 800; color: #000;">Deja tu opinión</h2>
+            </div>
+            
+            <div class="card-body p-4 d-flex flex-column">
+              <h3 class="h6 mb-3" style="font-weight: 800; color: #000;">Tu comentario</h3>
+              
+              <textarea class="form-control textarea-foro-cust mb-4 flex-grow-1" rows="8" placeholder="Escribe tu comentario aqui..."></textarea>
+              
+              <div class="text-center mt-auto">
+                <button type="button" class="btn btn-foro w-100">Enviar respuesta</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>

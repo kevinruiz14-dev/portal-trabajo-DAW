@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pagos e Informes (Empresas)</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        .morado {
+            background-color: #5b5f97 !important;
+        }
+        .boton-empresa {
+            background-color: #a3a8d3;
+        }
+        .badge-morado {
+            background-color: #4b0f6a;
+        }
+        .card-informes {
+            background-color: #dde0f5;
+            border: 1px solid #b0b5d8;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg morado navbar-dark">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="#">
+                <img src="./multimedia/encabezado.png" alt="Job Match" height="45">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Empresarial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="Pagina-principal-empresarios.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Reclutamiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-semibold border-bottom border-white pb-1" href="paquetes-empresariales.html">Informes y pagos</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn boton-empresa rounded-pill px-3 py-2 d-flex align-items-center gap-2 border-0">
+                            <i class="bi bi-bell"></i>
+                            <span class="badge badge-morado rounded-pill">2</span>
+                            <div style="width:1px; height:18px; background:#555;"></div>
+                            <span>El Sabor de Mamá</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tarjeta de contenido -->
+    <div class="container-fluid px-4 mt-4 text-center">
+        <div class="card-informes p-5">
+            <p class="fw-bold mb-0">
+                Aqui podras visualizar todos los informes sobre tus pagos y contratos con Job - Match
+            </p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
