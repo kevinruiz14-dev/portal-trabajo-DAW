@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Moderación</title>
+
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+
+
+
+<body class="bg-light">
+
+<div class="container-fluid">
+
+    <div class="row">
+
+
+        <!-- PANEL ADMINISTRATIVO -->
+        <div class="col-2 text-white min-vh-100 p-4" style="background-color:#1b164a;">
+
+
+            <div class="d-flex align-items-center gap-2 mb-5">
+
+                <i class="bi bi-person fs-5"></i>
+
+                <h6 class="m-0">
+                    Panel Administrativo
+                </h6>
+
+            </div>
+
+
+
+            <ul class="nav flex-column gap-4">
+
+
+                <li class="border-bottom pb-3">
+
+                    <a class="nav-link text-white d-flex align-items-center gap-2 p-0">
+
+                        <i class="bi bi-bar-chart"></i>
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+
+
+                <li class="border-bottom pb-3">
+
+                    <a class="nav-link text-white d-flex align-items-center gap-2 p-0">
+
+                        <i class="bi bi-people"></i>
+
+                        Usuarios
+
+                    </a>
+
+                </li>
+
+
+
+                <li class="border-bottom pb-3">
+
+                    <a class="nav-link text-white d-flex align-items-center gap-2 p-0">
+
+                        <i class="bi bi-building"></i>
+
+                        Empresas
+
+                    </a>
+
+                </li>
+
+
+
+                <li class="border-bottom pb-3">
+
+                    <a class="nav-link text-white d-flex align-items-center gap-2 p-0">
+
+                        <i class="bi bi-briefcase"></i>
+
+                        Vacantes
+
+                    </a>
+
+                </li>
+
+
+
+                <li>
+
+                    <a class="nav-link text-white d-flex align-items-center gap-2 p-2 rounded"
+                       style="background-color:#2e2a6b;">
+
+                        <i class="bi bi-pencil"></i>
+
+                        Moderación
+
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+
+
+            <div class="position-absolute bottom-0 start-0 p-4 small">
+
+                Cerrar sesión
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <!-- CONTENIDO -->
+        <div class="col-10 p-4">
+
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+
+
+                <h4>
+                    Moderación
+                </h4>
+
+
+
+                <div class="d-flex align-items-center gap-3">
+
+                    <i class="bi bi-bell"></i>
+
+
+
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                         class="rounded-circle"
+                         width="40">
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <input type="text"
+                   class="form-control rounded-pill w-50 mb-4"
+                   placeholder="Buscar moderación">
+
+
+
+
+
+            <div class="card shadow-sm">
+
+                <div class="card-body">
+
+
+                    <table class="table align-middle">
+
+
+                        <thead class="table-light">
+
+                            <tr>
+
+                                <th>Tipo</th>
+
+                                <th>Descripción del reporte</th>
+
+                                <th>Reportado por</th>
+
+                                <th>Fecha</th>
+
+                                <th>Acción</th>
+
+                            </tr>
+
+                        </thead>
+
+
+
+
+
+                        <tbody>
+
+
+                            <tr>
+
+
+                                <td>
+                                    Oferta
+                                </td>
+
+
+
+                                <td>
+                                    "Trabajo desde casa, gana $5000 al mes sin experiencia"
+                                </td>
+
+
+
+                                <td>
+
+
+                                    <div class="d-flex align-items-center gap-2">
+
+
+                                        <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                                             class="rounded-circle"
+                                             width="35">
+
+
+                                        <span>
+                                            Ana Gómez
+                                        </span>
+
+
+                                    </div>
+
+
+                                </td>
+
+
+
+                                <td>
+                                    12/03/2026
+                                </td>
+
+
+
+                                <td>
+
+
+                                    <button class="btn btn-primary btn-sm">
+                                        Revisar
+                                    </button>
+
+
+                                </td>
+
+
+                            </tr>
+
+
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="text-center mt-3 small">
+
+                Mostrando 1 de 1 moderación
+
+            </div>
+
+
+
+
+
+            <nav class="mt-2">
+
+
+                <ul class="pagination justify-content-center">
+
+
+                    <li class="page-item active">
+                        <a class="page-link">1</a>
+                    </li>
+
+
+                    <li class="page-item">
+                        <a class="page-link">2</a>
+                    </li>
+
+
+                    <li class="page-item">
+                        <a class="page-link">3</a>
+                    </li>
+
+
+                    <li class="page-item">
+                        <a class="page-link">></a>
+                    </li>
+
+
+                    <li class="page-item">
+                        <a class="page-link">>></a>
+                    </li>
+
+
+                </ul>
+
+
+            </nav>
+
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+    <style>
+        .sidebar { background: #1c164b; }
+        .sidebar .active, .sidebar .menu-item:hover { background: #2d266d; }
+        .stat-value { font-size: 2.5rem; }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- SIDEBAR -->
+            <div class="col-2 sidebar min-vh-100 p-4 text-white">
+                <h5 class="mb-4"><i class="bi bi-person"></i> Panel Administrativo</h5>
+                <div class="menu-item active rounded px-3 py-2 mb-2 text-white d-flex align-items-center gap-2">
+                    <i class="bi bi-speedometer2"></i> Dashboard
+                </div>
+                <a href="usuarios.html" class="menu-item rounded px-3 py-2 mb-2 text-white d-flex align-items-center gap-2 text-decoration-none">
+                    <i class="bi bi-people"></i> Usuarios
+                </a>
+                <div class="menu-item rounded px-3 py-2 mb-2 text-white d-flex align-items-center gap-2">
+                    <i class="bi bi-building"></i> Empresas
+                </div>
+                <div class="menu-item rounded px-3 py-2 mb-2 text-white d-flex align-items-center gap-2">
+                    <i class="bi bi-briefcase"></i> Vacantes
+                </div>
+                <div class="menu-item rounded px-3 py-2 mb-2 text-white d-flex align-items-center gap-2">
+                    <i class="bi bi-pencil"></i> Moderación
+                </div>
+                <div class="mt-5">
+                    <a href="../login.html" class="text-white text-decoration-none small">Cerrar sesión</a>
+                </div>
+            </div>
+            <!-- CONTENIDO -->
+            <div class="col-10 bg-light p-4">
+                <div class="d-flex justify-content-end align-items-center mb-4">
+                    <i class="bi bi-bell me-3 fs-4"></i>
+                    <span class="me-2">Bienvenido, Admin</span>
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle" width="40" height="40">
+                </div>
+                <!-- TARJETAS -->
+                <div class="row mb-4">
+                    <div class="col-md-3 mb-3"><div class="card text-white bg-secondary shadow-sm rounded">
+                            <div class="card-body py-3">
+                                <small class="text-white-50">Usuarios Totales</small>
+                                <div class="fw-bold fs-1">3,500</div>
+                            </div>
+                        </div></div>
+                    <div class="col-md-3 mb-3"><div class="card bg-warning shadow-sm rounded">
+                            <div class="card-body py-3">
+                                <small class="text-dark">Empresas Registradas</small>
+                                <div class="fw-bold fs-1 text-dark">1,250</div>
+                            </div>
+                        </div></div>
+                    <div class="col-md-3 mb-3"><div class="card text-white bg-success shadow-sm rounded">
+                            <div class="card-body py-3">
+                                <small class="text-white-50">Vacantes Activas</small>
+                                <div class="fw-bold fs-1">5,000</div>
+                            </div>
+                        </div></div>
+                    <div class="col-md-3 mb-3"><div class="card text-white bg-danger shadow-sm rounded">
+                            <div class="card-body py-3">
+                                <small class="text-white-50">Vacantes Vencidas</small>
+                                <div class="fw-bold fs-1">4,221</div>
+                            </div>
+                        </div></div>
+                </div>
+                <h5>Estadísticas Recientes</h5>
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-3">
+                        <div class="card small-card p-3">
+                            <h6>Crecimiento de Usuarios</h6>
+                            <canvas id="usersChart" height="200"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card small-card p-3">
+                            <h6>Postulaciones por Categoría</h6>
+                            <canvas id="categoryChart" height="80"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 mb-3">
+                        <div class="card small-card p-3">
+                            <h6>Últimas Empresas Registradas</h6>
+                            <table class="table table-borderless mb-0">
+                                <tbody>
+                                    <tr>
+                                        <td>Innovatech Solutions</td>
+                                        <td class="text-end"><button class="btn btn-sm btn-outline-primary">Ver Perfil</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Grupo Empresarial XYZ</td>
+                                        <td class="text-end"><button class="btn btn-sm btn-outline-primary">Ver Perfil</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>EcoVerde S.A.</td>
+                                        <td class="text-end"><button class="btn btn-sm btn-outline-primary">Ver Perfil</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>DigitalPro Marketing</td>
+                                        <td class="text-end"><button class="btn btn-sm btn-outline-primary">Ver Perfil</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-3">
+                        <div class="card small-card p-3">
+                            <h6>Reportes Recientes</h6>
+                            <ul class="list-unstyled mb-0">
+                                <li class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                    <span><strong>Reporte:</strong> Contenido inapropiado</span>
+                                    <button class="btn btn-sm btn-outline-secondary">Revisar</button>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                    <span><strong>Queja:</strong> Empresa falsa detectada</span>
+                                    <button class="btn btn-sm btn-outline-secondary">Revisar</button>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                    <span><strong>Alerta:</strong> Vacante sospechosa</span>
+                                    <button class="btn btn-sm btn-outline-secondary">Revisar</button>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center py-2">
+                                    <span><strong>Comentario:</strong> Lenguaje ofensivo</span>
+                                    <button class="btn btn-sm btn-outline-secondary">Revisar</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const usersChartData = {
+            labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+            datasets: [{
+                label: 'Usuarios',
+                data: [500, 1800, 2500, 3100, 4200, 5800],
+                borderColor: '#4e73df',
+                backgroundColor: 'rgba(78, 115, 223, 0.2)',
+                tension: 0.3,
+                fill: true
+            }]
+        };
+
+        const categoryChartData = {
+            labels: ['TI', 'Ventas', 'Administración', 'Otros'],
+            datasets: [{
+                label: 'Postulaciones',
+                data: [35, 25, 20, 20],
+                backgroundColor: ['#1d4ed8', '#f59e0b', '#16a34a', '#7c3aed']
+            }]
+        };
+
+        new Chart(document.getElementById('usersChart'), {
+            type: 'line',
+            data: usersChartData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('categoryChart'), {
+            type: 'pie',
+            data: categoryChartData,
+            options: { responsive: true }
+        });
+    </script>
+</body>
+
+</html>
