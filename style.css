@@ -1,0 +1,44 @@
+/* BORDE GRUESO */
+.border-12 {
+    border-width: 12px !important;
+    border-style: solid;
+}
+
+/* REDONDEADO */
+.rounded-4 {
+    border-radius: 1.5rem !important;
+}
+
+/* COLOR PRINCIPAL */
+.color {
+    color: #5B5F97 !important;
+}
+
+/* CARD BÁSICO */
+.border-basico {
+    border-color: #A3A8D3;
+}
+
+/* CARD PREMIUM */
+.border-premium {
+    border-color: #A3A8D3;
+}
+
+/* CARD POPULAR */
+.card-popular {
+    background-color: white;
+    border-color: #5B5F97;
+    transform: scale(1.05);
+}
+
+.misma-altura {
+    min-height: 420px;
+}
+
+.popular-altura {
+    min-height: 520px;
+}
+
+.card {
+    height: 100%;
+}
