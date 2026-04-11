@@ -65,13 +65,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <!-- Links centrados -->
           <div class="navbar-nav mx-auto gap-3">
-            <a class="nav-link text-dark" href="#">Explorar empleos</a>
+            <a class="nav-link text-dark" href="../usuario/empleos.html">Explorar empleos</a>
             <a class="nav-link fw-semibold text-decoration-underline" href="#" style="color: var(--purple);">Empresas</a>
-            <a class="nav-link text-dark" href="#">Recursos</a>
+            <a class="nav-link text-dark" href="../usuario/recursos.html">Recursos</a>
           </div>
 
           <!-- Botón Iniciar sesión -->
-          <button class="btn rounded-4 px-3 py-1 d-flex align-items-center gap-2"
+          <button id="btnIniciar" class="btn rounded-4 px-3 py-1 d-flex align-items-center gap-2"
             style="background-color: var(--purple-light); color: #333; font-size: 0.88rem;">
             <img src="./multimedia/img1.png" width="16" alt="">
             Iniciar sesión
@@ -102,7 +102,7 @@
         </div>
 
         <!-- Botón Postularme -->
-        <button class="btn rounded-4 text-white px-4"
+        <button id="btnPostularme" class="btn rounded-4 text-white px-4"
           style="background-color: var(--purple);">
           Postularme
         </button>
@@ -132,7 +132,7 @@
               <i class="bi bi-briefcase-fill" style="color: var(--purple); font-size: 0.7rem;"></i>
               0 vacantes disponibles
             </p>
-            <button class="btn btn-sm rounded-4 text-white w-100"
+            <button id="btnVer" class="btn btn-sm rounded-4 text-white w-100"
               style="background-color: var(--purple);">
               Ver más
             </button>
@@ -151,7 +151,7 @@
               <i class="bi bi-briefcase-fill" style="color: var(--purple); font-size: 0.7rem;"></i>
               15 vacantes disponibles
             </p>
-            <button class="btn btn-sm rounded-4 text-white w-100"
+            <button id="btnVer2" class="btn btn-sm rounded-4 text-white w-100"
               style="background-color: var(--purple);">
               Ver más
             </button>
@@ -169,5 +169,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="./js/general-empresa.js"></script>
   </body>
 </html>
