@@ -337,3 +337,41 @@
         .divider{
             margin: 20px 0;
         }
+
+.bg-seccion-usuario {
+    background-color: #d8cee8;
+}
+
+.pill-nav-container {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 1rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    padding: 0.25rem 0.5rem;
+    max-width: 600px;
+}
+
+.btn-pill-custom {
+    color: #000;
+    border-radius: 1rem;
+}
+
+.btn-pill-active {
+    background-color: #a988b3;
+}
+
+.btn-pill-active-alt {
+    background-color: #bfa2db;
+}
+
+.card-usuario-custom {
+    background-color: #ffffff;
+    border: 1px solid #000;
+    border-radius: 1.5rem;
+}
+
+.btn-outline-dark-custom {
+    border: 1px solid #000;
+    background-color: #ffffff;
+    border-radius: 1rem;
+}
