@@ -14,7 +14,6 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#5B5F97;">
   <div class="container">
-
     <a class="navbar-brand" href="#">
         <img src="img/logo.jpg" alt="Logo" height="80">
     </a>
@@ -25,55 +24,81 @@
 
     <div class="collapse navbar-collapse" id="menu">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a class="nav-link active" href="#"><strong>Inicio</strong></a></li>
-        <li class="nav-item"><a class="nav-link" href="#"><strong>Reclutamiento</strong></a></li>
-        <li class="nav-item"><a class="nav-link" href="#"><strong>Informes y pagos</strong></a></li>
+        <li class="nav-item"><a class="nav-link active" href="PaginaPrincipalindex.html"><strong>Inicio</strong></a></li>
+        <li class="nav-item"><a class="nav-link" href="buscarCVindex.html"><strong>Reclutamiento</strong></a></li>
+        <li class="nav-item"><a class="nav-link" href="pagos-informes.html"><strong>Informes y pagos</strong></a></li>
       </ul>
 
-      <div class="d-flex align-items-center rounded-pill px-2 py-1" style="background-color: #A3A8D3;">
+      <div class="d-flex align-items-center rounded-pill px-2 py-1 gap-2" style="background-color: #A3A8D3;">
+        <button class="btn position-relative border-0 text-white">
+          <i class="bi bi-bell"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill">2</span>
+        </button>
 
-  <!-- Notificaciones -->
-  <button class="btn position-relative border-0" style="background-color: #A3A8D3;">
-    🔔
-    
+        <div style="width:1px; height:25px; background-color:white;"></div>
+
+        <div class="dropdown">
+
+  <button class="btn border-0 text-white dropdown-toggle"
+          data-bs-toggle="dropdown">
+    <strong>El Sabor de Mamá</strong>
   </button>
 
-  <div style="width:1px; height:25px; background-color:black;"></div>
+  <ul class="dropdown-menu dropdown-menu-end">
 
-  <!--  Perfil -->
-  <button class="btn border-0" style="background-color: #A3A8D3;">
-    <strong>El  Sabor de Mamá</strong>
-  </button>
+    <li>
+      <a class="dropdown-item" href="#">
+        <i class="bi bi-house me-2"></i> Inicio
+      </a>
+    </li>
+
+    <li>
+      <a class="dropdown-item" href="#">
+        <i class="bi bi-gear me-2"></i> Configuración
+      </a>
+    </li>
+
+    <li><hr class="dropdown-divider"></li>
+
+    <li>
+      <a class="dropdown-item text-danger" href="#">
+        <i class="bi bi-box-arrow-right me-2"></i> Cerrar sesión
+      </a>
+    </li>
+
+  </ul>
 
 </div>
 
+      </div>
+    </div>
   </div>
 </nav>
 
-<!-- 🔹 TABS -->
+<!--TABS -->
 <div class="container mt-4 border border-dark rounded p-3" style="background-color: #ECECFA;">
   <div class="d-flex justify-content-between text-center">
 
-    <button class="btn fw-bold">Mis ofertas</button>
+    <a href="MisOfertasindex.html" class="btn fw-bold">Mis ofertas</a>
 
     <!-- ACTIVO -->
-    <button class="btn rounded-pill px-4 fw-bold" style="background-color:#A3A8D3;">
+    <a href="publicarOfertaindex.html" class="btn rounded-pill px-4 fw-bold" style="background-color:#A3A8D3;">
       Publicar oferta
-    </button>
+    </a>
 
-    <button class="btn fw-bold">Buscar CV</button>
+    <a href="buscarCVindex.html" class="btn fw-bold">Buscar CV</a>
 
   </div>
 </div>
 
-<!-- 🔹 FORMULARIO -->
-<div class="container mt-4">
+<!-- FORMULARIO -->
+<div id="formPublicar"  class="container mt-4">
 
   <h5 class="fw-bold">Datos de la oferta</h5>
 
   <div class="row">
 
-    <!-- 🔹 COLUMNA IZQUIERDA -->
+    <!-- COLUMNA IZQUIERDA -->
     <div class="col-12 col-lg-8">
 
       <div class="row g-3">
@@ -81,25 +106,25 @@
         <!-- Título -->
         <div class="col-md-6">
           <label class="form-label">Título *</label>
-          <input type="text" class="form-control rounded-pill  border-dark" placeholder="Ej: Ingeniero, Administrador">
+          <input type="text" name="titulo" class="form-control rounded-pill  border-dark" placeholder="Ej: Ingeniero, Administrador">
         </div>
 
         <!-- Complemento -->
         <div class="col-md-6">
           <label class="form-label">Complemento</label>
-          <input type="text" class="form-control rounded-pill  border-dark" placeholder="Ej: Con experiencia">
+          <input type="text" name="complemento" class="form-control rounded-pill  border-dark" placeholder="Ej: Con experiencia">
         </div>
 
         <!-- Título de la oferta -->
         <div class="col-12">
           <label class="form-label">Título de la oferta</label>
-          <input type="text" class="form-control rounded-pill  border-dark">
+          <input type="text" name="tituloOferta" class="form-control rounded-pill  border-dark">
         </div>
 
         <!-- Área -->
         <div class="col-md-6">
           <label class="form-label">Área *</label>
-          <select class="form-select rounded-pill  border-dark">
+          <select name="area" class="form-select rounded-pill  border-dark">
             <option>Seleccione</option>
           </select>
         </div>
@@ -107,7 +132,7 @@
         <!-- Descripción -->
         <div class="col-12">
           <label class="form-label">Descripción *</label>
-          <textarea class="form-control border-dark" rows="4"></textarea>
+          <textarea name="descripcion" class="form-control border-dark" rows="4"></textarea>
         </div>
 
       </div>
@@ -185,7 +210,7 @@
     <!-- Salario -->
     <div class="col-md-6">
   <label class="form-label">Salario mensual *</label>
-  <select class="form-select  border-dark">
+  <select id="salario" class="form-select  border-dark">
     <option>$ Selecciona</option>
     <option>$300 - $500</option>
     <option>$500 - $800</option>
@@ -196,7 +221,7 @@
 <!-- Vacantes -->
 <div class="col-md-6">
   <label class="form-label">Cantidad vacantes *</label>
-  <select class="form-select  border-dark">
+  <select id="vacantes" class="form-select  border-dark">
     <option>Selecciona</option>
     <option>1</option>
     <option>2</option>
@@ -349,7 +374,7 @@
   </div>
 </div>
   <!-- BOTÓN FINAL -->
-<button class="btn rounded-pill px-5 py-3 text-white fw-bold"
+<button id="btnPublicar" type="button" class="btn rounded-pill px-5 py-3 text-white fw-bold"
         style="background-color:#5B5F97;"
         data-bs-toggle="modal"
         data-bs-target="#modalExito">
