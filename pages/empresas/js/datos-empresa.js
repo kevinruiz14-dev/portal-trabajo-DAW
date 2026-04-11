@@ -109,4 +109,21 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })
 
+    // eliminar usuario y actualizar la vista
+    document.getElementById('listaUsuarios').addEventListener('click', function (e) {
+        if (e.target.classList.contains('btnEliminar')) {
+
+            var correo = e.target.parentElement.firstChild.textContent.trim()
+            e.target.parentElement.remove()
+
+            // busco en la vista el que tiene ese correo y lo elimino
+            var vistaUsuarios = document.querySelectorAll('#usuariosVista li')
+
+            for (var i = 0; i < vistaUsuarios.length; i++) {
+                if (vistaUsuarios[i].getAttribute('data-correo') == correo) {
+                    vistaUsuarios[i].remove()
+                }
+            }
+        }
+    })
 })
