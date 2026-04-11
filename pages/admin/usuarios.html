@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- SIDEBAR -->
+        <div class="col-2 vh-100 p-4 text-white" style="background:#1c164b;">
+            <h6 class="mb-4">
+                <i class="bi bi-person"></i>
+                Panel Administrativo
+            </h6>
+            <div class="mb-3 px-3 py-2 rounded">
+                <a href="dashboard.html"
+                   class="text-white text-decoration-none d-flex align-items-center gap-2">
+                    <i class="bi bi-speedometer2"></i>
+                    Dashboard
+                </a>
+            </div>
+            <div class="mb-3 px-3 py-2 rounded bg-dark">
+
+                <i class="bi bi-people me-2"></i>
+                Usuarios
+            </div>
+            <div class="mb-3 px-3 py-2 rounded">
+
+                <a href="empresas.html"
+                class="text-white text-decoration-none">
+                
+                    <i class="bi bi-building me-2"></i>
+                    Empresas
+            </a>
+
+            </div>
+            
+            <div class="mb-3 px-3 py-2 rounded">
+
+                <i class="bi bi-briefcase me-2"></i>
+                Vacantes
+            </div>
+            <div class="mb-3 px-3 py-2 rounded">
+                <i class="bi bi-pencil me-2"></i>
+                Moderación
+            </div>
+
+            <div class="mt-5 small">
+
+                <a href="../login.html"
+                   class="text-white text-decoration-none">
+
+                    Cerrar sesión
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CONTENIDO -->
+        <div class="col-10 p-5">
+
+
+            <!-- usuario logueado -->
+            <div class="d-flex justify-content-end align-items-center mb-4">
+
+                <i class="bi bi-bell me-3"></i>
+
+                <span class="me-2">
+
+                    Bienvenido, Admin
+
+                </span>
+
+                <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                     class="rounded-circle me-2"
+                     width="40">
+
+                <i class="bi bi-chevron-down"></i>
+
+            </div>
+
+
+
+            <h4 class="mb-4">
+
+                Gestión de Usuarios
+
+            </h4>
+
+
+
+            <!-- buscador -->
+            <input
+                   class="form-control rounded-pill w-50 mb-4"
+                   placeholder="Buscar Usuario">
+
+
+
+            <!-- tabla -->
+            <table class="table align-middle">
+
+
+                <thead class="border-bottom">
+
+                    <tr>
+
+                        <th></th>
+
+                        <th>Nombre</th>
+
+                        <th>Correo Electrónico</th>
+
+                        <th>Tipo de Cuenta</th>
+
+                        <th>Estado</th>
+
+                        <th></th>
+
+                    </tr>
+
+                </thead>
+
+
+
+                <tbody>
+
+
+                    <tr class="page-1">
+
+                        <td>
+
+                            <img src="https://i.pravatar.cc/40?img=5"
+                                 class="rounded-circle">
+
+                        </td>
+
+                        <td>
+
+                            Ana Gomez
+
+                        </td>
+
+                        <td>
+
+                            <u>ana.gomez@gmail.com</u>
+
+                        </td>
+
+                        <td>
+
+                            Candidato
+
+                        </td>
+
+                        <td>
+
+                            <span class="badge bg-success">
+
+                                Activo
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button class="btn btn-sm text-white"
+                                    style="background:#1c164b">
+
+                                Ver >
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr class="page-1">
+
+                        <td>
+
+                            <img src="https://logo.clearbit.com/maxidespensa.com"
+                                 width="40"
+                                 class="rounded-circle">
+
+                        </td>
+
+                        <td>
+
+                            Maxi Despensa
+
+                        </td>
+
+                        <td>
+
+                            maxidespensa@gmail.com
+
+                        </td>
+
+                        <td>
+
+                            Empresa
+
+                        </td>
+
+                        <td>
+
+                            <span class="badge bg-success">
+
+                                Activo
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button class="btn btn-sm text-white"
+                                    style="background:#1c164b">
+
+                                Ver >
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr class="page-1">
+
+                        <td>
+
+                            <img src="https://i.pravatar.cc/40?img=12"
+                                 class="rounded-circle">
+
+                        </td>
+
+                        <td>
+
+                            Luis Mendoza
+
+                        </td>
+
+                        <td>
+
+                            luismendoza@gmail.com
+
+                        </td>
+
+                        <td>
+
+                            Candidato
+
+                        </td>
+
+                        <td>
+
+                            <span class="badge bg-danger">
+
+                                Bloqueado
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button class="btn btn-sm text-white"
+                                    style="background:#1c164b">
+
+                                Ver >
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr class="page-2">
+
+                        <td>
+
+                            <img src="https://i.pravatar.cc/40?img=7"
+                                 class="rounded-circle">
+
+                        </td>
+
+                        <td>
+
+                            Maria Lopez
+
+                        </td>
+
+                        <td>
+
+                            maria.lopez@gmail.com
+
+                        </td>
+
+                        <td>
+
+                            Candidato
+
+                        </td>
+
+                        <td>
+
+                            <span class="badge bg-success">
+
+                                Activo
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button class="btn btn-sm text-white"
+                                    style="background:#1c164b">
+
+                                Ver >
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr class="page-2">
+
+                        <td>
+
+                            <img src="https://via.placeholder.com/40"
+                                 class="rounded-circle">
+
+                        </td>
+
+                        <td>
+
+                            Empresa XYZ
+
+                        </td>
+
+                        <td>
+
+                            empresa.xyz@gmail.com
+
+                        </td>
+
+                        <td>
+
+                            Empresa
+
+                        </td>
+
+                        <td>
+
+                            <span class="badge bg-success">
+
+                                Activo
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button class="btn btn-sm text-white"
+                                    style="background:#1c164b">
+
+                                Ver >
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr class="page-2">
+
+                        <td>
+
+                            <img src="https://i.pravatar.cc/40?img=8"
+                                 class="rounded-circle">
+
+                        </td>
+
+                        <td>
+
+                            Juan Perez
+
+                        </td>
+                        <td>
+                            juan.perez@gmail.com
+                        </td>
+                        <td>
+                            Candidato
+                        </td>
+                        <td>
+                            <span class="badge bg-danger">
+                                Bloqueado
+                            </span>
+                        </td>
+                        <td>
+                            <button class="btn btn-sm text-white"
+                                    style="background:#1c164b">
+                                Ver >
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- paginacion -->
+            <div class="d-flex justify-content-between mt-5">
+                <small>
+                    Mostrando 3 de 100 usuarios
+
+                </small>
+                <ul class="pagination pagination-sm">
+
+
+                    <li class="page-item active"
+                        id="page-1">
+
+                        <a class="page-link"
+                           href="#"
+                           onclick="showPage(1)">
+
+                            1
+
+                        </a>
+
+                    </li>
+                    <li class="page-item"
+                        id="page-2">
+
+                        <a class="page-link"
+                           href="#"
+                           onclick="showPage(2)">
+
+                            2
+
+                        </a>
+
+                    </li>
+                    <li class="page-item">
+
+                        <a class="page-link">
+                            3
+                        </a>
+                    </li>
+                    <li class="page-item">
+
+                        <a class="page-link"
+                           href="#"
+                           onclick="nextPage()">
+
+                            >
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    function showPage(page) {
+
+        document.querySelectorAll('tbody tr')
+            .forEach(row => row.style.display = 'none');
+
+        document.querySelectorAll(`tbody tr.page-${page}`)
+            .forEach(row => row.style.display = '');
+
+        document.querySelectorAll('.page-item')
+            .forEach(item => item.classList.remove('active'));
+
+        document.getElementById(`page-${page}`)
+            .classList.add('active');
+
+    }
+
+
+    function nextPage() {
+
+        let current =
+            document.querySelector('.page-item.active');
+
+        let next =
+            current.nextElementSibling;
+
+        if (next && next.id) {
+
+            let page =
+                next.id.split('-')[1];
+
+            showPage(page);
+
+        }
+
+    }
+    document.addEventListener(
+        'DOMContentLoaded',
+        () => showPage(1)
+    );
+
+</script>
+</body>
+</html>

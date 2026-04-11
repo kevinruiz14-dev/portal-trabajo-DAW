@@ -288,6 +288,127 @@ body {
   background-color: #ffffff;
 }
 
+.hero-section {
+  background: linear-gradient(
+    135deg,
+    rgba(175, 134, 238, 0.12),
+    rgba(246, 238, 255, 0.7)
+  );
+  border-radius: 30px;
+  margin: 0 -15px 30px;
+  padding: 40px 30px;
+}
+
+.eyebrow-text {
+  display: inline-block;
+  color: #6b2395;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+}
+
+.brand-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #4e126e;
+  display: inline-block;
+}
+
+.brand-title {
+  font-weight: 700;
+  color: #2b1d48;
+}
+
+.card-search {
+  background: #ffffff;
+  border-radius: 24px;
+  border: none;
+  box-shadow: 0 18px 45px rgba(92, 76, 130, 0.08);
+}
+
+.input-search .form-control {
+  border-radius: 999px;
+  border: 1px solid #ded4ed;
+  background: #f7f1ff;
+}
+
+.input-search .input-group-text {
+  border-radius: 50px;
+  border: 1px solid #ded4ed;
+}
+
+.btn-search {
+  min-height: 52px;
+}
+
+.job-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.btn-filter {
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background-color: #f2e8fb;
+  color: #4e126e;
+  padding: 8px 18px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.btn-filter:hover {
+  background-color: #e5d3f4;
+}
+
+.btn-filter.active {
+  background-color: #4e126e;
+  color: #ffffff;
+}
+
+.empleo-card {
+  border-radius: 24px;
+  border: none;
+  box-shadow: 0 16px 32px rgba(90, 62, 133, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.empleo-card:hover {
+  transform: translateY(-2px);
+}
+
+.empleo-detalle {
+  border-radius: 24px;
+  border: none;
+  box-shadow: 0 16px 32px rgba(90, 62, 133, 0.08);
+}
+
+.info-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4f3a7c;
+  font-size: 0.95rem;
+}
+
+.info-line i {
+  font-size: 18px;
+}
+
+.btn-lila {
+  background-color: #6b2395 !important;
+  border-color: #6b2395 !important;
+  color: white !important;
+}
+
+.btn-lila:hover {
+  background-color: #551d78 !important;
+  border-color: #551d78 !important;
+}
+
 .btn-noti {
   background-color: #a78cb5 !important;
   color: #000000 !important;
@@ -300,111 +421,73 @@ body {
   background-color: #8f749e !important;
 }
 
-
-/* Css para pagina del foro de discusión */
-
 .bg-foro-fondo {
-    background-color: #c9c5d4; 
+  background-color: #c9c5d4;
 }
 
-
 .card-foro-cust {
-    border-radius: 8px !important;
-    border: 1px solid #5a5a5a !important;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.08) !important;
+  border-radius: 8px !important;
+  border: 1px solid #5a5a5a !important;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08) !important;
 }
 
 .btn-foro {
-    background-color: #b193bd !important;
-    color: #000000 !important;
-    font-weight: 800;
-    border-radius: 40px;
-    border: none;
-    padding-top: 12px;
-    padding-bottom: 12px;
+  background-color: #b193bd !important;
+  color: #000000 !important;
+  font-weight: 800;
+  border-radius: 40px;
+  border: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .btn-foro:hover {
-    background-color: #9c7ea8 !important;
-    color: #000000 !important;
+  background-color: #9c7ea8 !important;
 }
-
 
 .textarea-foro-cust {
-    border-radius: 20px !important; 
-    border: 1px solid #5a5a5a !important;
-    resize: none; 
-    padding: 15px 20px !important; 
-    font-weight: 600;
-    color: #555;
+  border-radius: 20px !important;
+  border: 1px solid #5a5a5a !important;
+  resize: none;
+  padding: 15px 20px !important;
+  font-weight: 600;
+  color: #555;
 }
-
-.textarea-foro-cust:focus {
-    border-color: #b193bd !important;
-    box-shadow: 0 0 0 0.25rem rgba(177, 147, 189, 0.25) !important;
-}
-
-/* ---- ESTILOS PARA LA PANTALLA DE HABILIDADES ---- */
 
 .bg-habilidades-fondo {
-    background-color: #fcf1f9; 
+  background-color: #fcf1f9;
 }
 
 .header-habilidades {
-    background-color: #b18eb6;
-    padding: 15px 30px;
-    border-bottom: 1px solid #9e7f1033;
+  background-color: #b18eb6;
+  padding: 15px 30px;
 }
 
 .pill-usuario {
-    background-color: #d2c8d6;
-    border-radius: 50px;
-    padding: 5px 15px;
-    border: 1px solid #8e8e8e;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  background-color: #d2c8d6;
+  border-radius: 50px;
+  padding: 5px 15px;
+  border: 1px solid #8e8e8e;
 }
 
 .card-hab {
-    border-radius: 12px !important;
-    border: none !important;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.06) !important;
+  border-radius: 12px !important;
+  border: none !important;
 }
 
 .texto-gris-hab {
-    color: #9c9c9c;
-    font-size: 18px;
-    font-weight: 500;
+  color: #9c9c9c;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .btn-hab {
-    background-color: #d6abc7 !important;
-    color: #ffffff !important;
-    font-weight: 800;
-    border-radius: 20px;
-    border: none;
-    padding: 10px 35px;
-    font-size: 16px;
-}
-
-.btn-hab:hover {
-    background-color: #c795b5 !important;
-}
-
-/* Para el login */
-
-/*USUARIO*/
-body.usuario .left-panel {
-  background-color: #C9C3D6;
-}
-
-/*EMPRESA*/
-body.empresa .left-panel {
-  background-color: #5B5F97;
-}
-
-/*ADMINISTRADOR*/
-body.admin .left-panel {
-  background-color: #261498;
+  background-color: #d6abc7 !important;
+  color: #ffffff !important;
+  font-weight: 800;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 35px;
 }
 
 .btn-tipo {
@@ -413,37 +496,117 @@ body.admin .left-panel {
   padding: 6px 14px;
   border-radius: 15px;
   font-size: 14px;
-  transition: all 0.3s ease;
   color: #333;
 }
 
 .btn-tipo.activo {
   background-color: #d8cce3;
-  box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
   color: #000;
 }
 
-.btn-tipo:hover {
-  background-color: #e6e0f0;
+body.usuario {
+  background-color: #c9c3d6;
 }
 
-body.empresa .btn-primary {
-  background-color: #6c6fa3;
+.barra-empleos {
+  background: #b593c7;
+  height: 88px;
+  display: flex;
+  align-items: center;
+}
+
+.buscador-pill {
+  display: flex;
+  align-items: center;
+  width: 52%;
+  background: #e9d4f1;
+  padding: 10px 18px;
+  border-radius: 50px;
+}
+
+.seccion-input input {
+  border: none;
+  background: transparent;
+  width: 180px;
+}
+
+.seccion-input input:focus {
+  outline: none;
+}
+
+.recuperar-clave {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo-recuperar {
+  color: #6b2395;
+  font-weight: 700;
+}
+
+.input-correo {
+  max-width: 430px;
+  margin: 0 auto;
+  border-radius: 999px;
+  padding: 16px 24px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.btn-restablecer {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 40px;
+  border-radius: 999px;
+  background-color: #6b2395;
+  color: #fff;
+  font-weight: 600;
   border: none;
 }
 
-body.empresa h3 {
-  color: #5c5f8a;
+.form-container {
+  background: white;
+  max-width: 750px;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-body.empresa a {
-  color: #5c5f8a;
+.bg-seccion-usuario {
+  background-color: #d8cee8;
 }
 
-body.empresa {
-  background-color: #5B5F97;
+.pill-nav-container {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 1rem;
+  padding: 0.25rem 0.5rem;
 }
 
-body.usuario {
-  background-color: #C9C3D6;
+.btn-pill-custom {
+  color: #000;
+  border-radius: 1rem;
+}
+
+.btn-pill-active {
+  background-color: #a988b3;
+}
+
+.btn-pill-active-alt {
+  background-color: #bfa2db;
+}
+
+.card-usuario-custom {
+  background-color: #ffffff;
+  border: 1px solid #000;
+  border-radius: 1.5rem;
+}
+
+.btn-outline-dark-custom {
+  border: 1px solid #000;
+  background-color: #ffffff;
+  border-radius: 1rem;
 }

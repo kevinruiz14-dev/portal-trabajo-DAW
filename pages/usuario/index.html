@@ -182,29 +182,29 @@
               </a>
               <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
                 <li>
-                  <a class="dropdown-item" href="#"
-                    ><i class="bi bi-person"></i> Mi perfil</a
-                  >
+                  <a class="dropdown-item" href="Perfil-usuario.html">
+                    <i class="bi bi-person"></i> Mi perfil
+                  </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#"
-                    ><i class="bi bi-hand-index-thumb"></i> Mis Postulaciones</a
-                  >
+                  <a class="dropdown-item" href="mis-postulaciones.html">
+                    <i class="bi bi-hand-index-thumb"></i> Mis Postulaciones
+                  </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#"
-                    ><i class="bi bi-heart"></i> Mis Favoritos</a
-                  >
+                  <a class="dropdown-item" href="mis-favoritos.html">
+                    <i class="bi bi-heart"></i> Mis Favoritos
+                  </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#"
-                    ><i class="bi bi-star"></i> Valoraciones de empresa</a
-                  >
+                  <a class="dropdown-item" href="#">
+                    <i class="bi bi-star"></i> Valoraciones de empresa
+                  </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#"
-                    ><i class="bi bi-power"></i> Cerrar sesión</a
-                  >
+                  <a class="dropdown-item" href="Inicio-Sesión-general.html">
+                    <i class="bi bi-power"></i> Cerrar sesión
+                  </a>
                 </li>
               </ul>
             </div>
@@ -214,22 +214,221 @@
     </header>
 
     <main>
-      <h1>
-          <br/>
-          <br/>
-          <br/>
-          Bienvenido a tu panel de usuario, Monserrat Barillas
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <span style="text-align: center; align-items: center;"><h1>Esto aun no se programa</h1></span>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-      </h1>
+      <section class="hero-section pt-5 pb-4">
+        <div class="container">
+          <div class="row align-items-center gx-5">
+            <div class="col-lg-8">
+              <span class="eyebrow-text">Panel de usuario</span>
+              <h1 class="display-5 fw-bold mb-3">
+                Explora empleos que se adaptan a tu perfil
+              </h1>
+              <p class="lead text-muted">
+                Busca por cargo, ubicación o categoría. Encuentra oportunidades
+                recomendadas y postúlate desde un panel sencillo y moderno.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="search-panel pb-5">
+        <div class="container">
+          <div class="card card-search p-4 mb-4">
+            <form class="row g-3 align-items-center">
+              <div class="col-md-5">
+                <label class="form-label visually-hidden" for="job-keyword"
+                  >Cargo o categoría</label
+                >
+                <div class="input-group input-search">
+                  <span class="input-group-text bg-white border-end-0"
+                    ><i class="bi bi-briefcase-fill"></i
+                  ></span>
+                  <input
+                    id="job-keyword"
+                    type="text"
+                    class="form-control border-start-0"
+                    placeholder="Cargo o categoría"
+                  />
+                </div>
+              </div>
+              <div class="col-md-5">
+                <label class="form-label visually-hidden" for="job-location"
+                  >Localización</label
+                >
+                <div class="input-group input-search">
+                  <span class="input-group-text bg-white border-end-0"
+                    ><i class="bi bi-geo-alt-fill"></i
+                  ></span>
+                  <input
+                    id="job-location"
+                    type="text"
+                    class="form-control border-start-0"
+                    placeholder="Localización"
+                  />
+                </div>
+              </div>
+              <div class="col-md-2 d-grid">
+                <button type="submit" class="btn btn-purple btn-search w-100">
+                  <i class="bi bi-search me-2"></i> Buscar
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="job-filters mb-4">
+            <button type="button" class="btn btn-filter active">Todos</button>
+            <button type="button" class="btn btn-filter">Administración</button>
+            <button type="button" class="btn btn-filter">Tecnología</button>
+            <button type="button" class="btn btn-filter">Diseño</button>
+            <button type="button" class="btn btn-filter">Marketing</button>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-8">
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="card empleo-card h-100">
+                    <div class="card-body d-flex flex-column">
+                      <div>
+                        <h5 class="fw-bold mb-2">Jefe de bodega</h5>
+                        <p class="mb-2 text-muted small">
+                          <i class="bi bi-geo-alt-fill text-primary"></i
+                          ><span class="ms-1">Santa Ana, Santa Ana</span>
+                        </p>
+                        <div class="info-line mb-1">
+                          <i class="bi bi-person-check text-primary"></i>
+                          Contrato por tiempo indefinido
+                        </div>
+                        <div class="info-line mb-1">
+                          <i class="bi bi-clock text-primary"></i> Tiempo
+                          completo
+                        </div>
+                        <div class="info-line">
+                          <i class="bi bi-building text-primary"></i> Presencial
+                        </div>
+                      </div>
+                      <div
+                        class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top"
+                      >
+                        <span class="text-muted small">Hace 20 días</span>
+                        <a href="#" class="btn btn-lila btn-sm">Ver detalles</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card empleo-card h-100">
+                    <div class="card-body d-flex flex-column">
+                      <div>
+                        <h5 class="fw-bold mb-2">Diseñador gráfico junior</h5>
+                        <p class="mb-2 text-muted small">
+                          <i class="bi bi-geo-alt-fill text-primary"></i
+                          ><span class="ms-1">San Salvador, El Salvador</span>
+                        </p>
+                        <div class="info-line mb-1">
+                          <i class="bi bi-person-check text-primary"></i>
+                          Contrato a plazo fijo
+                        </div>
+                        <div class="info-line mb-1">
+                          <i class="bi bi-clock text-primary"></i> Tiempo
+                          completo
+                        </div>
+                        <div class="info-line">
+                          <i class="bi bi-building text-primary"></i> Híbrido
+                        </div>
+                      </div>
+                      <div
+                        class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top"
+                      >
+                        <span class="text-muted small">Hace 3 días</span>
+                        <a href="#" class="btn btn-lila btn-sm">Ver detalles</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card empleo-card h-100">
+                    <div class="card-body d-flex flex-column">
+                      <div>
+                        <h5 class="fw-bold mb-2">Desarrollador web Frontend</h5>
+                        <p class="mb-2 text-muted small">
+                          <i class="bi bi-geo-alt-fill text-primary"></i
+                          ><span class="ms-1">Sonsonate, Sonsonate</span>
+                        </p>
+                        <div class="info-line mb-1">
+                          <i class="bi bi-person-check text-primary"></i>
+                          Contrato freelance
+                        </div>
+                        <div class="info-line mb-1">
+                          <i class="bi bi-clock text-primary"></i> Medio tiempo
+                        </div>
+                        <div class="info-line">
+                          <i class="bi bi-building text-primary"></i> Remoto
+                        </div>
+                      </div>
+                      <div
+                        class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top"
+                      >
+                        <span class="text-muted small">Hace 10 días</span>
+                        <a href="#" class="btn btn-lila btn-sm">Ver detalles</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="card empleo-detalle h-100 p-4">
+                <h4 class="fw-bold mb-3">Diseñador gráfico junior</h4>
+                <p class="mb-2">
+                  <i class="bi bi-geo-alt-fill text-primary"></i>
+                  <strong>Ubicación:</strong> San Salvador, El Salvador
+                </p>
+                <p class="mb-2">
+                  <i class="bi bi-cash-stack text-success"></i>
+                  <strong>Salario:</strong> $450 - $550 mensuales
+                </p>
+                <p class="mb-3">
+                  <i class="bi bi-clock text-primary"></i>
+                  <strong>Horario:</strong> Lunes a viernes — 8:00 am a 5:00 pm
+                </p>
+                <hr />
+                <h5 class="fw-bold">Descripción del puesto</h5>
+                <p>
+                  Encargado de crear piezas gráficas digitales e impresas para
+                  redes sociales, campañas publicitarias y material corporativo.
+                  Apoya al equipo de marketing en la conceptualización de
+                  diseños atractivos.
+                </p>
+                <h5 class="fw-bold mt-3">Responsabilidades</h5>
+                <ul>
+                  <li>Diseño de publicaciones para redes sociales.</li>
+                  <li>Edición básica de video y fotografía.</li>
+                  <li>Creación de piezas publicitarias digitales y físicas.</li>
+                  <li>Apoyo al departamento de marketing.</li>
+                  <li>Trabajo conjunto con el equipo creativo.</li>
+                </ul>
+                <h5 class="fw-bold mt-3">Requisitos</h5>
+                <ul>
+                  <li>Técnico o estudiante de diseño gráfico.</li>
+                  <li>Manejo de Illustrator, Photoshop o equivalentes.</li>
+                  <li>Portafolio actualizado.</li>
+                  <li>Creatividad y atención al detalle.</li>
+                </ul>
+                <h5 class="fw-bold mt-3">Beneficios</h5>
+                <ul>
+                  <li>Prestaciones de ley.</li>
+                  <li>Trabajo híbrido.</li>
+                  <li>Ambiente creativo y dinámico.</li>
+                </ul>
+                <div class="d-grid mt-4">
+                  <button class="btn btn-purple btn-lg">Postularme</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="fondo-negro pt-4 pb-3 mt-5">
