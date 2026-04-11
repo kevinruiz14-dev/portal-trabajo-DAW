@@ -45,42 +45,71 @@
 
 <body>
 
-   <nav class="navbar navbar-expand-lg navbar-color">
+ <nav class="navbar navbar-expand-lg navbar-color">
   <div class="container">
     <img src="./multimedia">
-    
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link text-white mx-5 " href="#">Empresarial</a>
+
+        <!-- INICIO -->
         <a class="nav-link text-white mx-3" href="Pagina-principal-empresas.html">Inicio</a>
-        <a class="nav-link text-white mx-3"  href="#">Reclutamiento</a>
-        <a class="nav-link text-white mx-3 " href="Pagos-informes.html">Informes y pagos</a>
-         
-       <div class="dropdown">
-  <button class="btn rounded-pill px-3 py-2 d-flex align-items-center gap-2 dropdown-toggle"
-          style="background-color:#a3a8d3;"
-          data-bs-toggle="dropdown">
 
-    <i class="bi bi-bell"></i>
-    <span class="badge rounded-pill me-2" style="background-color:#4b0f6a;">2</span>
-    <div style="width:1px; height:20px; background:#444;"></div>
-    <span class="fw-semibold">El Sabor de Mamá</span>
-  </button>
+        <!-- MI EMPRESA -->
+        <div class="nav-item dropdown mx-3">
+          <a class="nav-link text-white dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            Mi empresa
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Datos_empresa.html">Editar datos</a></li>
+          </ul>
+        </div>
 
-  <ul class="dropdown-menu dropdown-menu-end">
-    <li>
-      <a class="dropdown-item" href="../usuario/Inicio-Sesión-general.html">Cerrar sesión</a>
-    </li>
-  </ul>
-</div> 
-    </div>
+        <!-- RECLUTAMIENTO -->
+        <div class="nav-item dropdown mx-3">
+          <a class="nav-link text-white dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            Reclutamiento
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="publicarOfertaindex.html">Publicar oferta</a></li>
+            <li><a class="dropdown-item" href="MisOfertasindex.html">Gestionar ofertas</a></li>
+          </ul>
+        </div>
+
+        <!-- PLANES -->
+        <div class="nav-item dropdown mx-3">
+          <a class="nav-link text-white dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            Planes
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Paquetes-empresariales.html">Seleccionar paquete</a></li>
+            <li><a class="dropdown-item" href="Pagos-informes.html">Informes y pagos</a></li>
+          </ul>
+        </div>    
+        </div>
+
+        <!-- BOTON EMPRESA -->
+        <div class="dropdown">
+          <button class="btn rounded-pill px-3 py-2 d-flex align-items-center gap-2 dropdown-toggle"
+            style="background-color:#a3a8d3;"
+            data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge rounded-pill me-2" style="background-color:#4b0f6a;">2</span>
+            <div style="width:1px; height:20px; background:#444;"></div>
+            <span class="fw-semibold">El Sabor de Mamá</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="../usuario/Inicio-Sesión-general.html">Cerrar sesión</a></li>
+          </ul>
+        </div>
+
     </div>
   </div>
-</nav>
+ </nav>
 
 
 
