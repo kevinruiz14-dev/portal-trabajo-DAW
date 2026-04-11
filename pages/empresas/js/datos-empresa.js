@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
             this.textContent = 'Guardar'
             columna.style.paddingTop = '30px'
 
-            // cambio cada parrafo por un input
             parrafos.forEach(function (p, i) {
                 let input = document.createElement('input')
                 input.className = 'form-control mb-2'
@@ -26,8 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         } else {
 
+            let inputs = document.querySelectorAll('.col-md-8 input')
+            let vacio = false
 
-            // Verificar que no hay campos vacios
             inputs.forEach(function (input) {
                 if (input.value.trim() == '') {
                     input.style.border = '2px solid red'
@@ -73,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.getElementById('errorUsuario').classList.add('d-none')
 
-        // Verificar si el correo existe
         let lista = document.querySelectorAll('#listaUsuarios li')
         let existe = false
 
@@ -88,24 +87,36 @@ document.addEventListener('DOMContentLoaded', function () {
             return
         }
 
-        // lo agrego al modal
         let li = document.createElement('li')
         li.className = 'list-group-item d-flex justify-content-between align-items-center'
         li.innerHTML = correo + ' <button class="btn btn-sm btn-danger btnEliminar">X</button>'
         document.getElementById('listaUsuarios').appendChild(li)
 
-        // lo agrego a la vista principal
         let liVista = document.createElement('li')
         liVista.className = 'list-group-item'
         liVista.textContent = correo
+        // guardo el correo en un atributo para identificarlo despues
+        liVista.setAttribute('data-correo', correo)
         document.getElementById('usuariosVista').appendChild(liVista)
 
         document.getElementById('nuevoUsuario').value = ''
     })
 
+    // cuando elimino un usuario del modal tambien lo borro de la vista
     document.getElementById('listaUsuarios').addEventListener('click', function (e) {
         if (e.target.classList.contains('btnEliminar')) {
+
+            let correo = e.target.parentElement.firstChild.textContent.trim()
             e.target.parentElement.remove()
+
+            // busco en la vista el que tiene el mismo correo y lo elimino
+            let vistaUsuarios = document.querySelectorAll('#usuariosVista li')
+
+            for (let i = 0; i < vistaUsuarios.length; i++) {
+                if (vistaUsuarios[i].getAttribute('data-correo') == correo) {
+                    vistaUsuarios[i].remove()
+                }
+            }
         }
     })
 
