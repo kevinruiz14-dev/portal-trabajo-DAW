@@ -29,25 +29,30 @@
       </div>
 
       <div class="d-flex align-items-center gap-3">
-        <div class="campana-alerta">
-          <i class="bi bi-bell"></i>
-          <span class="punto-notif">9</span>
-        </div>
-        
-        <div class="dropdown">
-          <button class="boton-perfil-personal dropdown-toggle" type="button" data-bs-toggle="dropdown">
-            <span id="nombreUsuario"></span>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2 mt-2">
+    <div class="dropdown">
+        <button type="button" data-bs-toggle="dropdown"
+            style="background-color: #e2c8ea; border: none; border-radius: 50px; padding: 10px 20px; display: flex; align-items: center; gap: 10px;">
+
+            <i class="bi bi-bell" style="font-size: 18px; color: #333;"></i>
+
+            <span style="background-color: #5b1a8a; color: white; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 12px;">9</span>
+
+            <div style="width: 1px; height: 20px; background-color: #999;"></div>
+
+            <span id="nombreUsuario" style="color: #333; font-weight: 500;"></span>
+
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2 mt-2">
             <li><a class="dropdown-item" href="../usuario/Perfil-usuario.html"><i class="bi bi-person me-2"></i> Mi Perfil</a></li>
             <li><a class="dropdown-item" href="../usuario/mis-postulaciones.html"><i class="bi bi-briefcase me-2"></i> Postulaciones</a></li>
             <li><a class="dropdown-item" href="../usuario/mis-favoritos.html"><i class="bi bi-heart me-2"></i> Mis favoritos</a></li>
             <li><a class="dropdown-item" href="#"><i class="bi bi-star me-2"></i> Valoraciones de empresa</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item text-danger" href="../usuario/Inicio-Sesión-general.html">Cerrar sesión</a></li>
-          </ul>
-        </div>
-      </div>
+        </ul>
+    </div>
+</div>
     </div>
   </nav>
 
