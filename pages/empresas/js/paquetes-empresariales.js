@@ -17,7 +17,10 @@ function seleccionarPlan(nombre, precio) {
         estado: "Pendiente"
     })
 
-    localStorage.setItem('pagos', JSON.stringify(pagos))
+    // muestra el nombre del plan en el modal
+    document.getElementById('nombrePlanModal').textContent = nombre
 
-    window.location.href = "paquetes-empresariales.html"
+    // abre el modal
+    let modal = new bootstrap.Modal(document.getElementById('modalPlan'))
+    modal.show()
 }
