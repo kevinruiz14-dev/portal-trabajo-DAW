@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Job Match - Planes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+  <style>
+  
+    .navbar {
+        background-color:#5b5f97 !important;
+    }
+
+    .badge-morado {
+    background-color: #5B2583;
+    color: white;
+    }
+
+    .resumen-card {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    }
+
+    .plan-card {
+        border-radius: 40px !important;
+        padding: 25px;
+        min-height: 480px;
+        background: white;
+        border: none;
+    }
+
+    .borde-basico { 
+        border: 15px solid #a3a8d3 !important; 
+    }
+    .borde-popular { 
+        border: 15px solid #5B2583 !important; 
+    }
+    .borde-premium { 
+        border: 15px solid #a3a8d3 !important; 
+    }
+
+    .price-text {
+        color: #d9534f; 
+        font-weight: bold;
+        font-size: 1.3rem;
+        margin-top: 5px;
+    }
+
+    .check-icon {
+        color: #28a745; 
+        margin-right: 10px;
+        font-size: 1.1rem;
+    }
+
+    .plan-card ul li {
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+</style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg morado navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="./multimedia/encabezado.png" alt="Job Match" height="45">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark bold" href="#">Empresarial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white text-decoration-underline" href="Pagina-principal-empresarios.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Reclutamiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="paquetes-empresariales.html">Informes y pagos</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn rounded-pill px-3 py-2 d-flex align-items-end gap-2 border-0" style="background-color: #a3a8d3; color: #333;">
+                            <i class="bi bi-bell"></i>
+                            <span class="badge badge-morado rounded-pill">2</span>
+                            <div style="width:1px; height:18px; background:#555;"></div>
+                            <span>El Sabor de Mamá</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  
+
+    <div class="container mt-5">
+        
+        <div class="resumen-card bg-white d-flex align-items-center shadow-sm mb-5">
+            <div class="d-flex align-items-center flex-grow-1">
+                <i class="bi bi-building fs-1 me-3 text-secondary"></i>
+                <div>
+                    <h5 class="mb-0 fw-bold">Hola, El Sabor de Mamá</h5>
+                    <small class="text-muted">Administrador</small>
+                </div>
+            </div>
+
+            <div class="vertical-divider d-none d-md-block" style="height: 60px;"></div>
+
+            <div class="flex-grow-1">
+                <p class="small fw-bold mb-2">Resumen de tus ofertas publicadas</p>
+                <div class="d-flex gap-3 small">
+                    <span><i class="bi bi-file-earmark-text text-secondary"></i> Básico (2)</span>
+                    <span><i class="bi bi-star text-secondary"></i> Popular (0)</span>
+                    <span><i class="bi bi-gem text-secondary"></i> Premium (1)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-md-4">
+                <div class="card plan-card borde-basico shadow-sm">
+                    <div class="card-body text-center">
+                        <h3 class="fw-bold mb-1">Básico</h3>
+                        <p class="small text-muted mb-0">desde</p>
+                        <p class="price-text">$35.99 + IVA</p>
+                        <ul class="list-unstyled text-start mt-4 small">
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Publicación durante 60 días naturales</li>
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Acceso a datos de contacto</li>
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Confidencialidad de los datos</li>
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Oferta de empleo visible en resultados</li>
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Soporte básico por correo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card plan-card borde-popular shadow-sm">
+                    <div class="card-body text-center">
+                        <h3 class="fw-bold mb-1">Popular</h3>
+                        <p class="small text-muted mb-0">desde</p>
+                        <p class="price-text">$45.99 + IVA</p>
+                        <ul class="list-unstyled text-start mt-4 small">
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Publicación durante 60 días naturales</li>
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Acceso ilimitado a datos de contacto</li>
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Aumento de +20% de inscripciones</li>
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Visibilidad de empleo destacada</li>
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Confidencialidad de los datos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card plan-card borde-premium shadow-sm">
+                    <div class="card-body text-center">
+                        <h3 class="fw-bold mb-1">Premium</h3>
+                        <p class="small text-muted mb-0">desde</p>
+                        <p class="price-text">$52.99 + IVA</p>
+                        <ul class="list-unstyled text-start mt-4 small">
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Publicación durante 60 días naturales</li>
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Acceso ilimitado a datos de contacto</li>
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Aumento de +40% de inscripciones</li>
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Posición prioritaria en resultados</li>
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Etiqueta de empleo destacado</li>
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Búsqueda urgente de candidatos</li>
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Acceso extra a 25 CVs de la base</li>
+                            <li><i class="bi bi-check-square-fill check-icon"></i>Recomendación automática</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

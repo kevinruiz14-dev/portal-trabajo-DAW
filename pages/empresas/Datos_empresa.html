@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Datos de Empresa</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body{
+            background-color: #f5f5f5;
+        }
+        .topbar{
+            background-color: #5c5a9e;
+            padding: 15px 30px;
+            color: white;
+        }
+        .data-box{
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            padding: 25px;
+            background: white;
+        }
+        .data-row{
+            border-right: 1px solid #ccc;
+        }
+        .user-box{
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            padding: 20px;
+            background: white;
+        }
+        .edit-link{
+            text-decoration: none;
+        }
+
+        .navbar-color {
+    background-color: #5b5f97 !important;
+}
+
+    </style>
+</head>
+
+<body>
+
+   <nav class="navbar navbar-expand-lg navbar-color">
+  <div class="container">
+    <img src="./multimedia">
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link text-white mx-5 " href="#">Empresarial</a>
+        <a class="nav-link text-white mx-3" href="Pagina-principal-empresas.html">Inicio</a>
+        <a class="nav-link text-white mx-3"  href="#">Reclutamiento</a>
+        <a class="nav-link text-white mx-3 " href="Pagos-informes.html">Informes y pagos</a>
+         
+       <div class="dropdown">
+  <button class="btn rounded-pill px-3 py-2 d-flex align-items-center gap-2 dropdown-toggle"
+          style="background-color:#a3a8d3;"
+          data-bs-toggle="dropdown">
+
+    <i class="bi bi-bell"></i>
+    <span class="badge rounded-pill me-2" style="background-color:#4b0f6a;">2</span>
+    <div style="width:1px; height:20px; background:#444;"></div>
+    <span class="fw-semibold">El Sabor de Mamá</span>
+  </button>
+
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li>
+      <a class="dropdown-item" href="../usuario/Inicio-Sesión-general.html">Cerrar sesión</a>
+    </li>
+  </ul>
+</div> 
+    </div>
+    </div>
+  </div>
+</nav>
+
+
+
+    <div class="container mt-4">
+
+        <!-- TÍTULO -->
+        <h5 class="fw-bold mb-3">Datos de empresa</h5>
+
+        <!-- CAJA DE DATOS DE EMPRESA -->
+        <div class="data-box position-relative border-dark">
+
+            <a href="#" class="position-absolute top-0 end-0 mt-4 me-3 edit-link">✏️ Editar</a>
+
+            <div class="row  ">
+                <div class="col-md-4 data-row border-dark">
+                    <p class="fw-bold">Nombre fiscal de la empresa</p>
+                    <p class="fw-bold">NIT</p>
+                    <p class="fw-bold">Correo electrónico de contacto</p>
+                    <p class="fw-bold">Nombres y apellidos</p>
+                    <p class="fw-bold">Contraseña</p>
+                    <p class="fw-bold">Teléfono de contacto</p>
+                </div>
+
+                <div class="col-md-8">
+                    <p>Distribuidora Manolo</p>
+                    <p>0614-290786-102-3</p>
+                    <p>manolo13@gmail.com</p>
+                    <p>Manolo Enrique Lopez de la Cruz</p>
+                    <p>***************</p>
+                    <p>6070-3230</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ALERTAS -->
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div id="mensajeError" class="alert alert-danger d-none rounded-pill text-center py-2 mb-0" role="alert">
+                        <i class="fa-solid fa-circle-exclamation me-2"></i>
+                        Por favor, completa todos los campos antes de continuar.
+                    </div>
+                    <div id="mensajeExito" class="alert alert-success d-none rounded-pill text-center py-2 mb-0" role="alert">
+                        <i class="fa-solid fa-circle-check me-2"></i>
+                        Datos guardados correctamente.
+                    </div>
+                </div>
+            </div>
+
+
+        <!-- USUARIOS DE LA EMPRESA -->
+         <div class="d-flex justify-content-between align-items-center mt-4 mb-2">
+            <h6 class="fw-bold">Usuarios de la empresa</h6>
+            <a href="#" class="edit-link" data-bs-toggle="modal" data-bs-target="#modalUsuarios">✏️ Editar usuarios</a>
+        </div>
+
+        <div class="user-box border-dark">
+         <ul id="usuariosVista" class="list-group"></ul>
+        </div>
+
+        <div class="modal fade" id="modalUsuarios" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header" style="background-color:#5b5f97;">
+                        <h5 class="modal-title text-white">Usuarios de la empresa</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="list-group mb-3" id="listaUsuarios">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                manolo13@gmail.com
+                                <span class="badge rounded-pill text-white" style="background-color:#5b5f97;">Admin</span>
+                            </li>
+                        </ul>
+                        <p class="fw-bold mb-1">Agregar usuario</p>
+                        <div class="input-group">
+                            <input type="email" id="nuevoUsuario" class="form-control" placeholder="Correo del nuevo usuario">
+                            <button class="btn text-white" id="btnAgregarUsuario" style="background-color:#5b5f97;">+</button>
+                        </div>
+                        <div id="errorUsuario" class="alert alert-danger d-none rounded-pill text-center py-1 mt-2 mb-0">
+                            Ingresa un correo válido.
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="./js/datos-empresa.js"></script>
+  </body>
+</html>
