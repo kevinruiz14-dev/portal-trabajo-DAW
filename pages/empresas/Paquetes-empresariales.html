@@ -67,42 +67,71 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg morado navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="./multimedia/encabezado.png" alt="Job Match" height="45">
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+ <nav class="navbar navbar-expand-lg navbar-color">
+  <div class="container">
+    <img src="./multimedia">
 
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center gap-3">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark bold" href="#">Empresarial</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white text-decoration-underline" href="Paquetes-empresariales.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Reclutamiento</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="Pagos-informes.html">Informes y pagos</a>
-                    </li>
-                    <li class="nav-item">
-                        <button class="btn rounded-pill px-3 py-2 d-flex align-items-end gap-2 border-0" style="background-color: #a3a8d3; color: #333;">
-                            <i class="bi bi-bell"></i>
-                            <span class="badge badge-morado rounded-pill">2</span>
-                            <div style="width:1px; height:18px; background:#555;"></div>
-                            <span>El Sabor de Mamá</span>
-                        </button>
-                    </li>
-                </ul>
-            </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+
+        <!-- INICIO -->
+        <a class="nav-link text-white mx-3" href="Pagina-principal-empresas.html">Inicio</a>
+
+        <!-- MI EMPRESA -->
+        <div class="nav-item dropdown mx-3">
+          <a class="nav-link text-white dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            Mi empresa
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Datos_empresa.html">Editar datos</a></li>
+          </ul>
         </div>
-    </nav>
+
+        <!-- RECLUTAMIENTO -->
+        <div class="nav-item dropdown mx-3">
+          <a class="nav-link text-white dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            Reclutamiento
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="publicarOfertaindex.html">Publicar oferta</a></li>
+            <li><a class="dropdown-item" href="MisOfertasindex.html">Gestionar ofertas</a></li>
+          </ul>
+        </div>
+
+        <!-- PLANES -->
+        <div class="nav-item dropdown mx-3">
+          <a class="nav-link text-white dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            Planes
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Paquetes-empresariales.html">Seleccionar paquete</a></li>
+            <li><a class="dropdown-item" href="Pagos-informes.html">Informes y pagos</a></li>
+          </ul>
+        </div>    
+        </div>
+
+        <!-- BOTON EMPRESA -->
+        <div class="dropdown">
+          <button class="btn rounded-pill px-3 py-2 d-flex align-items-center gap-2 dropdown-toggle"
+            style="background-color:#a3a8d3;"
+            data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge rounded-pill me-2" style="background-color:#4b0f6a;">2</span>
+            <div style="width:1px; height:20px; background:#444;"></div>
+            <span class="fw-semibold">El Sabor de Mamá</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="../usuario/Inicio-Sesión-general.html">Cerrar sesión</a></li>
+          </ul>
+        </div>
+
+    </div>
+  </div>
+ </nav>
 
   
 
