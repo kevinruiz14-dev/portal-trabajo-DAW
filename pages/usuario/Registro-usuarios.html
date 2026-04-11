@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro - Job Match</title>
+    <link rel="stylesheet" href="./css/usuario-monse.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="registro">
+
+<div class="form-container">
+
+    <h3 class="title">¡Encuentra tu próximo empleo!</h3>
+    <p class="subtitle">Regístrate y postúlate</p>
+
+    <h5 class="section-title">Datos de la cuenta</h5>
+
+    <div class="mb-3">
+        <label>Correo electrónico *</label>
+        <input type="email" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Contraseña *</label>
+        <input type="password" class="form-control">
+    </div>
+
+    <hr class="divider">
+
+    <h5 class="section-title">Datos Generales</h5>
+
+    <div class="mb-3">
+        <label>Nombres *</label>
+        <input type="text" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Apellidos *</label>
+        <input type="text" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Nacionalidad *</label>
+        <select class="form-select">
+            <option>Seleccione</option>
+            <option>Salvadoreño</option>
+            <option>Guatemalteco</option>
+        </select>
+    </div>
+
+    <label>Género *</label>
+    <div class="d-flex mb-3">
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="genero">
+            <label class="form-check-label">Femenino</label>
+        </div>
+
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="genero">
+            <label class="form-check-label">Masculino</label>
+        </div>
+
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="genero">
+            <label class="form-check-label">Prefiero no decirlo</label>
+        </div>
+
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="genero">
+            <label class="form-check-label">Otro</label>
+        </div>
+    </div>
+
+    <label>Fecha de nacimiento *</label>
+    <div class="row mb-3">
+        <div class="col">
+            <select class="form-select">
+                <option>Dia</option>
+            </select>
+        </div>
+        <div class="col">
+            <select class="form-select">
+                <option>Mes</option>
+            </select>
+        </div>
+        <div class="col">
+            <select class="form-select">
+                <option>Año</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="mb-3">
+    <label>Idiomas *</label>
+
+    <div id="idiomas-container">
+        <div class="input-group mb-2 idioma-item">
+            <input type="text" class="form-control" placeholder="Ej: Español">
+            <button class="btn btn-outline-secondary" type="button" onclick="aquipondrelafunciondespues()">+</button>
+            </div>
+        </div>
+    </div>
+
+    <h5 class="section-title">Datos de Contacto</h5>
+
+    <div class="mb-3">
+        <label>País de residencia *</label>
+        <select class="form-select">
+            <option>Seleccione</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Departamento *</label>
+        <select class="form-select">
+            <option>Seleccione</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Ciudad *</label>
+        <select class="form-select">
+            <option>Seleccione</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Teléfono de contacto 1 *</label>
+        <input type="text" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Teléfono de contacto 2 (Opcional)</label>
+        <input type="text" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Nivel académico</label>
+        <select class="form-select">
+            <option>Seleccione</option>
+        </select>
+    </div>
+
+    <label>¿Has tenido experiencia laboral?</label>
+    <div class="d-flex mb-3">
+        <div class="form-check">
+            <input type="radio" name="exp" class="form-check-input">
+            <label>Si</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" name="exp" class="form-check-input">
+            <label>No</label>
+        </div>
+    </div>
+
+    <label>Posee vehículo (Opcional)</label>
+    <div class="d-flex mb-3">
+        <div class="form-check">
+            <input type="radio" name="vehiculo" class="form-check-input">
+            <label>Si</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" name="vehiculo" class="form-check-input">
+            <label>No</label>
+        </div>
+    </div>
+
+    <label>Posee Licencia de Conducir (Opcional)</label>
+    <div class="d-flex mb-3">
+        <div class="form-check">
+            <input type="radio" name="licencia" class="form-check-input">
+            <label>Si</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" name="licencia" class="form-check-input">
+            <label>No</label>
+        </div>
+    </div>
+
+    <p style="font-size: 13px;">
+        *Al hacer clic en Registrarme acepta las condiciones de uso de Job-Match y además le enviará correos electrónicos cada vez que se publiquen ofertas de empleo que coincidan con su experiencia laboral o áreas de interés. También recibira información sobre artículos útiles para su desarrollo profesional.*</p>
+    <button class="btn-registro w-100">Registrarme</button>
+</div>
+ <script src="./js/usuario-monse.js"></script>
+</body>
+</html>
