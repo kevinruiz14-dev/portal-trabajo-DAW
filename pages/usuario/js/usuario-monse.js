@@ -1,4 +1,4 @@
-// ── Para cambiar inicios de sesión y el estilo de los botones 
+//  Para cambiar inicios de sesión y el estilo de los botones 
 
 function cambiarTipo(boton, tipo) {
   document.querySelectorAll(".btn-tipo").forEach(btn => {
@@ -23,7 +23,7 @@ function cambiarTipo(boton, tipo) {
   }
 }
 
-// ── PERFIL 
+//  PERFIL 
 
 function cargarPerfil() {
   var nombre   = localStorage.getItem("perfil_nombre")   || "Monserrat Barillas";
@@ -82,7 +82,7 @@ function cambiarFoto(input) {
   reader.readAsDataURL(input.files[0]);
 }
 
-// ── EXPERIENCIAS 
+//  EXPERIENCIAS 
 
 function getExperiencias() {
   return JSON.parse(localStorage.getItem("perfil_experiencias") || "null") ||
@@ -155,7 +155,7 @@ function eliminarExp(i) {
   renderExperiencias();
 }
 
-// ── ESTUDIOS 
+//  ESTUDIOS 
 
 function getEstudios() {
   return JSON.parse(localStorage.getItem("perfil_estudios") || "null") ||
@@ -227,7 +227,7 @@ function eliminarEstudio(i) {
   renderEstudios();
 }
 
-// ── CONOCIMIENTOS 
+//  CONOCIMIENTOS }
 
 function getConocimientos() {
   return JSON.parse(localStorage.getItem("perfil_conocimientos") || "null") || ["Ventas", "Inventario"];
@@ -255,7 +255,7 @@ function guardarConocimientos() {
   document.getElementById("formConocimientos").style.display = "none";
 }
 
-// ── MOVILIDAD 
+//  MOVILIDAD 
 
 function renderMovilidad() {
   var guardado = localStorage.getItem("perfil_movilidad_checks");
@@ -288,7 +288,7 @@ function guardarMovilidad() {
   document.getElementById("formMovilidad").style.display = "none";
 }
 
-// ── CV 
+//  CV 
 
 function subirCV(input) {
   if (!input.files || !input.files[0]) return;
@@ -318,7 +318,7 @@ function mostrarCV() {
     '<input type="file" id="inputCV" accept=".pdf" style="display:none;" onchange="subirCV(this)">';
 }
 
-// ── EMPLEOS 
+//  EMPLEOS 
 
 var filtros = { orden:"", categoria:"", experiencia:"", salario:"", lugar:"" };
 
@@ -330,12 +330,14 @@ function setFiltro(tipo, valor, btnId, labelDefault) {
 }
 
 function getDB() {
+
   if (typeof empleosDB !== "undefined") return empleosDB;
   if (typeof monseBD   !== "undefined") return monseBD;
   return [];
 }
 
 function aplicarFiltros() {
+
   var inputCargo = document.getElementById("input-cargo") || document.getElementById("job-keyword");
   var inputLugar = document.getElementById("input-lugar") || document.getElementById("job-location");
   var textoCargo = inputCargo ? inputCargo.value.toLowerCase().trim() : "";
@@ -363,12 +365,66 @@ function iniciales(nombre) {
   return nombre.split(' ').slice(0,2).map(function(w){ return w[0]; }).join('').toUpperCase();
 }
 
+//  FAVORITOS 
+
+function getFavoritos() {
+  return JSON.parse(localStorage.getItem("favoritos") || "[]");
+}
+
+function esFavorito(id) {
+  return getFavoritos().indexOf(id) !== -1;
+}
+
+function toggleFavorito(id, event) {
+  if (event) event.stopPropagation();
+  var favs = getFavoritos();
+  var idx  = favs.indexOf(id);
+  if (idx === -1) {
+    favs.push(id);
+  } else {
+    favs.splice(idx, 1);
+  }
+  localStorage.setItem("favoritos", JSON.stringify(favs));
+  // Actualiza todos los corazones con ese id visibles en la página
+  document.querySelectorAll(".btn-fav[data-id='" + id + "']").forEach(function(btn) {
+    actualizarIconoFav(btn, favs.indexOf(id) !== -1);
+  });
+
+  renderFavoritos();
+}
+
+
+function actualizarIconoFav(btn, activo) {
+  if (activo) {
+    btn.innerHTML = '<i class="bi bi-heart-fill"></i>';
+    btn.style.color = "#E24B4A";
+    btn.title = "Quitar de favoritos";
+  } else {
+    btn.innerHTML = '<i class="bi bi-heart"></i>';
+    btn.style.color = "#aaa";
+    btn.title = "Guardar en favoritos";
+  }
+}
+
+function botonFav(id) {
+  var activo = esFavorito(id);
+  var color  = activo ? "#E24B4A" : "#aaa";
+  var icono  = activo ? "bi-heart-fill" : "bi-heart";
+  var titulo = activo ? "Quitar de favoritos" : "Guardar en favoritos";
+  return '<button class="btn-fav" data-id="' + id + '" title="' + titulo + '" ' +
+    'style="background:none;border:none;cursor:pointer;font-size:20px;color:' + color + ';padding:0 6px;line-height:1;flex-shrink:0;" ' +
+    'onclick="toggleFavorito(' + id + ', event)">' +
+    '<i class="bi ' + icono + '"></i>' +
+    '</button>';
+}
+
 function renderLista(lista) {
   var cont = document.getElementById("lista-empleos");
   if (!cont) return;
   cont.innerHTML = "";
 
   if (lista.length === 0) {
+
     var isRow = cont.classList.contains("row");
     cont.innerHTML = isRow
       ? '<div class="col-12"><div class="alert alert-secondary text-center">No se encontraron empleos con esos criterios.</div></div>'
@@ -382,6 +438,7 @@ function renderLista(lista) {
     var dias = e.diasAtras === 1 ? "Hace 1 día" : "Hace " + e.diasAtras + " días";
 
     if (isRow) {
+
       cont.innerHTML +=
         '<div class="col-md-6">' +
           '<div class="card empleo-card h-100" id="card-' + e.id + '" style="cursor:pointer;" onclick="verDetalle(' + e.id + ')">' +
@@ -398,7 +455,10 @@ function renderLista(lista) {
               '</div>' +
               '<div class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top">' +
                 '<span class="text-muted small">' + dias + '</span>' +
-                '<button class="btn btn-lila btn-sm" onclick="event.stopPropagation(); verDetalle(' + e.id + ')">Ver detalles</button>' +
+                '<div class="d-flex align-items-center gap-2">' +
+                  botonFav(e.id) +
+                  '<button class="btn btn-lila btn-sm" onclick="event.stopPropagation(); verDetalle(' + e.id + ')">Ver detalles</button>' +
+                '</div>' +
               '</div>' +
             '</div>' +
           '</div>' +
@@ -422,7 +482,8 @@ function renderLista(lista) {
               '</div>' +
               '<div class="text-end fecha-publicacion fecha-card">' + dias + '</div>' +
             '</div>' +
-            '<div class="mt-3 d-flex justify-content-end">' +
+            '<div class="mt-3 d-flex justify-content-end align-items-center gap-2">' +
+              botonFav(e.id) +
               '<button class="btn btn-lila boton-detalles" onclick="event.stopPropagation(); verDetalle(' + e.id + ')">Ver detalles</button>' +
             '</div>' +
           '</div>' +
@@ -458,16 +519,139 @@ function verDetalle(id) {
     '<h5 class="fw-bold mt-3">Responsabilidades</h5><ul>' + resp + '</ul>' +
     '<h5 class="fw-bold mt-3">Requisitos</h5><ul>' + reqs + '</ul>' +
     '<h5 class="fw-bold mt-3">Beneficios</h5><ul>' + bens + '</ul>' +
-    '<div class="d-flex justify-content-start mt-4">' +
-      '<button class="btn-postularme" onclick="alert(\'Solicitud enviada para: ' + e.cargo + '\')">' +
-        '<i class="bi bi-heart-fill me-2"></i> Postularme' +
+    '<div class="d-flex align-items-center gap-3 mt-4">' +
+      '<button class="btn-postularme" onclick="guardarPostulacion(' + e.id + ')">' +
+        'Postularme' +
       '</button>' +
+      botonFav(e.id) +
     '</div>';
 }
 
-//  INICIAR AL CARGAR 
+// POSTULACIONES 
+
+function renderFavoritos() {
+  var cont = document.getElementById("lista-favoritos");
+  if (!cont) return;
+
+  var favs = getFavoritos();
+  var db   = getDB();
+
+  cont.innerHTML = "";
+
+  if (favs.length === 0) {
+    cont.innerHTML = "<p class='text-center text-muted'>No tienes favoritos aún.</p>";
+    return;
+  }
+
+  favs.forEach(function(id) {
+    var empleo = db.find(function(e){ return e.id === id; });
+    if (!empleo) return;
+
+    cont.innerHTML += `
+      <div class="mb-3 p-3 rounded-4" style="border:1px solid #ccc;">
+        
+        <div class="d-flex justify-content-between">
+          <div>
+            <h5 class="fw-bold">${empleo.cargo}</h5>
+            <p class="text-muted mb-1">${empleo.empresa}</p>
+            <p class="text-muted">${empleo.ciudad}, ${empleo.departamento}</p>
+          </div>
+
+          <div>
+            ${botonFav(empleo.id)}
+          </div>
+        </div>
+
+        <div class="text-end mt-2">
+          <button class="btn" 
+                  style="background:#a988b3;"
+                  onclick="verDetalle(${empleo.id})">
+            Ver detalles
+          </button>
+        </div>
+
+      </div>
+    `;
+  });
+}
+
+function getPostulaciones() {
+  return JSON.parse(localStorage.getItem("postulaciones") || "[]");
+}
+
+function guardarPostulacion(id) {
+  var postulaciones = getPostulaciones();
+
+  if (postulaciones.indexOf(id) === -1) {
+    postulaciones.push(id);
+    localStorage.setItem("postulaciones", JSON.stringify(postulaciones));
+    alert("Te postulaste a este empleo");
+  } else {
+    alert("Ya te habías postulado a este empleo ⚠️");
+  }
+}
+
+function renderPostulaciones() {
+  var cont = document.getElementById("lista-postulaciones");
+  var vacio = document.getElementById("sin-postulaciones");
+
+  if (!cont) return;
+
+  var postulaciones = getPostulaciones();
+  var db = getDB();
+
+  cont.innerHTML = "";
+
+  if (postulaciones.length === 0) {
+    if (vacio) vacio.style.display = "flex";
+    return;
+  }
+
+  if (vacio) vacio.style.display = "none";
+
+  postulaciones.forEach(function(id) {
+    var empleo = db.find(function(e){ return e.id === id; });
+    if (!empleo) return;
+
+    cont.innerHTML += `
+      <div class="mb-3 p-3 rounded-4 bg-white" style="border:1px solid #ccc;">
+        
+        <div class="d-flex justify-content-between">
+          <div>
+            <h5 class="fw-bold">${empleo.cargo}</h5>
+            <p class="text-muted mb-1">${empleo.empresa}</p>
+            <p class="text-muted">${empleo.ciudad}, ${empleo.departamento}</p>
+          </div>
+        </div>
+
+        <div class="text-end mt-2">
+          <button class="btn" 
+                  style="background:#a988b3;"
+                  onclick="verDetalle(${empleo.id})">
+            Ver detalles
+          </button>
+        </div>
+
+      </div>
+    `;
+  });
+}
+
+// ── INICIAR AL CARGAR 
 
 document.addEventListener("DOMContentLoaded", function() {
   cargarPerfil();
   if (document.getElementById("lista-empleos")) aplicarFiltros();
+})
+
+document.addEventListener("DOMContentLoaded", function() {
+  if (document.getElementById("lista-favoritos")) {
+    renderFavoritos();
+  }
+})
+
+document.addEventListener("DOMContentLoaded", function() {
+  if (document.getElementById("lista-postulaciones")) {
+    renderPostulaciones();
+  }
 });
