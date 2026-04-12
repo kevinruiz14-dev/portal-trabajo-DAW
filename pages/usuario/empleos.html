@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,272 +9,279 @@
     <link rel="stylesheet" href="./css/usuario-monse.css">
   </head>
   <body>
-    <!-- Barra de búsqueda -->
+
+    <!-- NAVBAR -->
     <nav class="navbar barra-empleos">
-  <div class="container align-items-center">
-    <button class="btn btn-link btn-back p-0 me-4" onclick="window.location.href='Pagina-principal-usuario.html'">
-      <i class="bi bi-arrow-left fs-2"></i>
-    </button>
-    <form class="buscador-central flex-grow-1" role="search">
-      <div class="buscador-pill">
-        <div class="seccion-input border-end">
-          <i class="bi bi-briefcase"></i>
-          <input type="text" placeholder="Cargo o Categoría"/>
-        </div>
-        <div class="seccion-input">
-          <i class="bi bi-geo-alt"></i>
-          <input type="text" placeholder="Localización"/>
-        </div>
-        <button class="btn icono-search" type="submit">
-          <i class="bi bi-search"></i>
+      <div class="container align-items-center">
+        <button class="btn btn-link btn-back p-0 me-4" onclick="window.location.href='Pagina-principal-usuario.html'">
+          <i class="bi bi-arrow-left fs-2"></i>
         </button>
-      </div>
-    </form>
-    <div class="dropdown ms-4">
-        <button class="usuario-container dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <form class="buscador-central flex-grow-1" role="search" onsubmit="return false;">
+          <div class="buscador-pill">
+            <div class="seccion-input border-end">
+              <i class="bi bi-briefcase"></i>
+              <input type="text" id="input-cargo" placeholder="Cargo o Categoría" oninput="aplicarFiltros()"/>
+            </div>
+            <div class="seccion-input">
+              <i class="bi bi-geo-alt"></i>
+              <input type="text" id="input-lugar" placeholder="Localización" oninput="aplicarFiltros()"/>
+            </div>
+            <button class="btn icono-search" type="button" onclick="aplicarFiltros()">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+        <div class="dropdown ms-4">
+          <button class="usuario-container dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <div class="avatar"></div>
             <i class="bi bi-person-heart"></i>
             <span>Monserrat Barillas</span>
-        </button>
-        <ul class="dropdown-menu">
+          </button>
+          <ul class="dropdown-menu">
             <li><h6 class="dropdown-header">Notificaciones</h6></li>
             <li><a class="dropdown-item text-secondary" href="#">Tu solicitud fue aceptada</a></li>
             <li><a class="dropdown-item" href="#">Nuevo mensaje recibido</a></li>
             <li><a class="dropdown-item text-secondary" href="#">Tienes una oferta nueva</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item text-danger" href="Login.html">Cerrar sesión</a></li>
-        </ul>
+          </ul>
         </div>
       </div>
     </nav>
-    <!-- Filtros -->
+
+    <!-- FILTROS -->
     <section class="empleos mt-4">
       <div class="container">
-         <div class="btn-group">
-        <button type="button" class="btn btn-secondary">Ordenar</button>
-        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-          <span class="visually-hidden">Toggle Dropdown</span>
-        </button>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" id="btn-orden">Ordenar</button>
+          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Antiguo</a></li>
-            <li><a class="dropdown-item" href="#">Reciente</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('orden','Antiguo','btn-orden','Ordenar');return false;">Antiguo</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('orden','Reciente','btn-orden','Ordenar');return false;">Reciente</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#" onclick="setFiltro('orden','','btn-orden','Ordenar');return false;">Limpiar</a></li>
           </ul>
-          </div>
-          <div class="btn-group">
-        <button type="button" class="btn btn-secondary">Categoria</button>
-        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-          <span class="visually-hidden">Toggle Dropdown</span>
-        </button>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" id="btn-categoria">Categoría</button>
+          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Administración</a></li>
-            <li><a class="dropdown-item" href="#">Atención al cliente</a></li>
-            <li><a class="dropdown-item" href="#">Ventas y comercio</a></li>
-            <li><a class="dropdown-item" href="#">Tecnología / IT</a></li>
-            <li><a class="dropdown-item" href="#">Diseño gráfico</a></li>
-            <li><a class="dropdown-item" href="#">Logística y transporte</a></li>
-            <li><a class="dropdown-item" href="#">Contabilidad y finanzas</a></li>
-            <li><a class="dropdown-item" href="#">Recursos humanos</a></li>
-            <li><a class="dropdown-item" href="#">Servicio al cliente</a></li>
-            <li><a class="dropdown-item" href="#">Salud</a></li>
-            <li><a class="dropdown-item" href="#">Educación</a></li>
-            <li><a class="dropdown-item" href="#">Marketing y publicidad</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('categoria','Administración','btn-categoria','Categoría');return false;">Administración</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('categoria','Atención al cliente','btn-categoria','Categoría');return false;">Atención al cliente</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('categoria','Ventas y comercio','btn-categoria','Categoría');return false;">Ventas y comercio</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('categoria','Tecnología / IT','btn-categoria','Categoría');return false;">Tecnología / IT</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('categoria','Diseño gráfico','btn-categoria','Categoría');return false;">Diseño gráfico</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('categoria','Logística y transporte','btn-categoria','Categoría');return false;">Logística y transporte</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('categoria','Contabilidad y finanzas','btn-categoria','Categoría');return false;">Contabilidad y finanzas</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('categoria','Recursos humanos','btn-categoria','Categoría');return false;">Recursos humanos</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('categoria','Servicio al cliente','btn-categoria','Categoría');return false;">Servicio al cliente</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('categoria','Salud','btn-categoria','Categoría');return false;">Salud</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('categoria','Educación','btn-categoria','Categoría');return false;">Educación</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('categoria','Marketing y publicidad','btn-categoria','Categoría');return false;">Marketing y publicidad</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#" onclick="setFiltro('categoria','','btn-categoria','Categoría');return false;">Limpiar</a></li>
           </ul>
-          </div>
-          <div class="btn-group">
-        <button type="button" class="btn btn-secondary">Experiencia</button>
-        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-          <span class="visually-hidden">Toggle Dropdown</span>
-        </button>
-         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Sin experiencia</a></li>
-          <li><a class="dropdown-item" href="#">Menos de 1 año</a></li>
-          <li><a class="dropdown-item" href="#">1 - 2 años</a></li>
-          <li><a class="dropdown-item" href="#">2 - 3 años</a></li>
-          <li><a class="dropdown-item" href="#">3 - 5 años</a></li>
-          <li><a class="dropdown-item" href="#">Más de 5 años</a></li>
-        </ul>
-          </div>
-          <div class="btn-group">
-        <button type="button" class="btn btn-secondary">Salario</button>
-        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-          <span class="visually-hidden">Toggle Dropdown</span>
-        </button>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" id="btn-experiencia">Experiencia</button>
+          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Menos de $300</a></li>
-            <li><a class="dropdown-item" href="#">$300 - $450</a></li>
-            <li><a class="dropdown-item" href="#">$450 - $600</a></li>
-            <li><a class="dropdown-item" href="#">$600 - $800</a></li>
-            <li><a class="dropdown-item" href="#">$800 - $1,000</a></li>
-            <li><a class="dropdown-item" href="#">Más de $1,000</a></li>
-            <li><a class="dropdown-item" href="#">Salario negociable</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('experiencia','Sin experiencia','btn-experiencia','Experiencia');return false;">Sin experiencia</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('experiencia','Menos de 1 año','btn-experiencia','Experiencia');return false;">Menos de 1 año</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('experiencia','1 - 2 años','btn-experiencia','Experiencia');return false;">1 - 2 años</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('experiencia','2 - 3 años','btn-experiencia','Experiencia');return false;">2 - 3 años</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('experiencia','3 - 5 años','btn-experiencia','Experiencia');return false;">3 - 5 años</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('experiencia','Más de 5 años','btn-experiencia','Experiencia');return false;">Más de 5 años</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#" onclick="setFiltro('experiencia','','btn-experiencia','Experiencia');return false;">Limpiar</a></li>
           </ul>
-          </div>
-          <div class="btn-group">
-        <button type="button" class="btn btn-secondary">Lugar de trabajo</button>
-        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-          <span class="visually-hidden">Toggle Dropdown</span>
-        </button>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" id="btn-salario">Salario</button>
+          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">San Salvador</a></li>
-            <li><a class="dropdown-item" href="#">La Libertad</a></li>
-            <li><a class="dropdown-item" href="#">Santa Ana</a></li>
-            <li><a class="dropdown-item" href="#">Sonsonate</a></li>
-            <li><a class="dropdown-item" href="#">San Miguel</a></li>
-            <li><a class="dropdown-item" href="#">Usulután</a></li>
-            <li><a class="dropdown-item" href="#">Ahuachapán</a></li>
-            <li><a class="dropdown-item" href="#">Cuscatlán</a></li>
-            <li><a class="dropdown-item" href="#">La Paz</a></li>
-            <li><a class="dropdown-item" href="#">La Unión</a></li>
-            <li><a class="dropdown-item" href="#">Morazán</a></li>
-            <li><a class="dropdown-item" href="#">Chalatenango</a></li>
-            <li><a class="dropdown-item" href="#">Cabañas</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('salario','Menos de $300','btn-salario','Salario');return false;">Menos de $300</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('salario','$300 - $450','btn-salario','Salario');return false;">$300 - $450</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('salario','$450 - $600','btn-salario','Salario');return false;">$450 - $600</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('salario','$600 - $800','btn-salario','Salario');return false;">$600 - $800</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('salario','$800 - $1,000','btn-salario','Salario');return false;">$800 - $1,000</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('salario','Más de $1,000','btn-salario','Salario');return false;">Más de $1,000</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('salario','Salario negociable','btn-salario','Salario');return false;">Salario negociable</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#" onclick="setFiltro('salario','','btn-salario','Salario');return false;">Limpiar</a></li>
           </ul>
-          </div>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" id="btn-lugar">Lugar de trabajo</button>
+          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('lugar','San Salvador','btn-lugar','Lugar de trabajo');return false;">San Salvador</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('lugar','La Libertad','btn-lugar','Lugar de trabajo');return false;">La Libertad</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('lugar','Santa Ana','btn-lugar','Lugar de trabajo');return false;">Santa Ana</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('lugar','Sonsonate','btn-lugar','Lugar de trabajo');return false;">Sonsonate</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('lugar','San Miguel','btn-lugar','Lugar de trabajo');return false;">San Miguel</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('lugar','Usulután','btn-lugar','Lugar de trabajo');return false;">Usulután</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('lugar','Ahuachapán','btn-lugar','Lugar de trabajo');return false;">Ahuachapán</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('lugar','Cuscatlán','btn-lugar','Lugar de trabajo');return false;">Cuscatlán</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('lugar','La Paz','btn-lugar','Lugar de trabajo');return false;">La Paz</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('lugar','La Unión','btn-lugar','Lugar de trabajo');return false;">La Unión</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('lugar','Morazán','btn-lugar','Lugar de trabajo');return false;">Morazán</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('lugar','Chalatenango','btn-lugar','Lugar de trabajo');return false;">Chalatenango</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setFiltro('lugar','Cabañas','btn-lugar','Lugar de trabajo');return false;">Cabañas</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#" onclick="setFiltro('lugar','','btn-lugar','Lugar de trabajo');return false;">Limpiar</a></li>
+          </ul>
+        </div>
+
       </div>
     </section>
-     <!-- Empleos -->
+
+    <!-- EMPLEOS -->
     <section class="empleos mt-4">
-    <div class="container">
+      <div class="container">
         <div class="row g-4">
-            <div class="col-md-6 d-flex flex-column gap-4">
-                <div class="card empleo-card-relative">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <h5 class="card-title fw-bold mb-2">Jefe de bodega</h5>
-                                <p class="mb-2">
-                                    <i class="bi bi-geo-alt-fill text-primary"></i>
-                                    <span class="ms-1">Santa Ana, Santa Ana</span>
-                                </p>
-                                <div class="info-line mb-1">
-                                    <i class="bi bi-person-check"></i>
-                                    <span>Contrato por tiempo indefinido</span>
-                                </div>
-                                <div class="info-line mb-1">
-                                    <i class="bi bi-clock"></i>
-                                    <span>Tiempo completo</span>
-                                </div>
-                                <div class="info-line mb-1">
-                                    <i class="bi bi-building"></i>
-                                    <span>Presencial</span>
-                                </div>
-                            </div>
-                            <div class="text-end fecha-publicacion fecha-card"> Hace 20 días</div>
-                        </div>
-                        <div class="mt-3 d-flex justify-content-end">
-                            <a href="" class="btn btn-lila boton-detalles">Ver detalles</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card empleo-card-relative">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <h5 class="card-title fw-bold mb-2">Diseñador gráfico junior</h5>
-                                <p class="mb-2">
-                                    <i class="bi bi-geo-alt-fill text-primary"></i>
-                                    <span class="ms-1">San Salvador, El Salvador</span>
-                                </p>
-                                <div class="info-line mb-1">
-                                    <i class="bi bi-person-check"></i>
-                                    <span>Contrato a plazo fijo</span>
-                                </div>
-                                <div class="info-line mb-1">
-                                    <i class="bi bi-clock"></i>
-                                    <span>Tiempo completo</span>
-                                </div>
-                                <div class="info-line mb-1">
-                                    <i class="bi bi-building"></i>
-                                    <span>Híbrido</span>
-                                </div>
-                            </div>
-                            <div class="text-end fecha-publicacion fecha-card"> Hace 3 días</div>
-                        </div>
-                        <div class="mt-3 d-flex justify-content-end">
-                            <a href="empleos-vista.html" class="btn btn-lila boton-detalles">Ver detalles</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card empleo-card-relative">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <h5 class="card-title fw-bold mb-2">Desarrollador web Frontend</h5>
-                                <p class="mb-2">
-                                    <i class="bi bi-geo-alt-fill text-primary"></i>
-                                    <span class="ms-1">Sonsonate, Sonsonate</span>
-                                </p>
-                                <div class="info-line mb-1">
-                                    <i class="bi bi-person-check"></i>
-                                    <span>Contrato freelance</span>
-                                </div>
-                                <div class="info-line mb-1">
-                                    <i class="bi bi-clock"></i>
-                                    <span>Medio tiempo</span>
-                                </div>
-                                <div class="info-line mb-1">
-                                    <i class="bi bi-building"></i>
-                                    <span>Remoto</span>
-                                </div>
-                            </div>
-                            <div class="text-end fecha-publicacion fecha-card"> Hace 10 días</div>
-                        </div>
-                        <div class="mt-3 d-flex justify-content-end">
-                            <a href="Vista de empleos2.html" class="btn btn-lila boton-detalles">Ver detalles</a>
-                        </div>
-                    </div>
-                </div>
+          <div class="col-md-6 d-flex flex-column gap-4" id="lista-empleos"></div>
+          <div class="col-md-6">
+            <div class="card empleo-detalle-grande p-4" id="detalle-empleo">
+              <p class="text-muted text-center mt-5">
+                <i class="bi bi-hand-index-thumb fs-3 d-block mb-2"></i>
+                Seleccioná un empleo para ver los detalles.
+              </p>
             </div>
-            <div class="col-md-6">
-                <div class="card empleo-detalle-grande p-4">
-                    <h4 class="fw-bold mb-3">Jefe de Bodega — Detalles del puesto</h4>
-                    <p><i class="bi bi-geo-alt-fill text-primary"></i>
-                        <strong>Ubicación:</strong> Santa Ana, Santa Ana
-                    </p>
-                    <p><i class="bi bi-cash-stack text-success"></i>
-                        <strong>Salario:</strong> $500 - $650 mensuales
-                    </p>
-                    <p><i class="bi bi-clock"></i>
-                        <strong>Horario:</strong> Lunes a sábado — 8:00 am a 5:00 pm
-                    </p>
-                    <hr>
-                    <h5 class="fw-bold">Descripción del puesto</h5>
-                    <p>
-                        Responsable de la organización, control y supervisión de bodegas,
-                        inventarios y procesos logísticos. Garantiza el flujo correcto de
-                        productos y materiales dentro de la empresa.
-                    </p>
-                    <h5 class="fw-bold mt-3">Responsabilidades</h5>
-                    <ul>
-                        <li>Supervisar entradas y salidas de inventario.</li>
-                        <li>Controlar niveles de stock y generar reportes.</li>
-                        <li>Coordinar al personal de bodega.</li>
-                        <li>Verificar calidad y estado de los productos.</li>
-                        <li>Organizar rutas internas de distribución.</li>
-                    </ul>
-                    <h5 class="fw-bold mt-3">Requisitos</h5>
-                    <ul>
-                        <li>Bachillerato o técnico en logística.</li>
-                        <li>2 años de experiencia como encargado o asistente de bodega.</li>
-                        <li>Manejo de inventarios y paquetes de office.</li>
-                        <li>Buena organización y liderazgo.</li>
-                    </ul>
-                    <h5 class="fw-bold mt-3">Beneficios</h5>
-                    <ul>
-                        <li>Prestaciones de ley.</li>
-                        <li>Oportunidad de crecimiento.</li>
-                        <li>Ambiente laboral estable.</li>
-                    </ul>
-                    <div class="d-flex justify-content-start mt-4">
-                        <button class="btn-postularme">
-                            <i class="bi bi-heart-fill me-2"></i> Postularme
-                        </button>
-                    </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <script src="./js/usuario-monse.js"></script>
-    </body>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      /*  BASE DE DATOS SIMULADA  */
+      var empleosDB = [
+        { id:1, cargo:"Jefe de bodega", empresa:"Distribuidora Nacional S.A.", categoria:"Logística y transporte", departamento:"Santa Ana", ciudad:"Santa Ana", salario:"$500 - $650 mensuales", rangoSalario:"$450 - $600", horario:"Lunes a sábado — 8:00 am a 5:00 pm", contrato:"Contrato por tiempo indefinido", jornada:"Tiempo completo", modalidad:"Presencial", experiencia:"2 - 3 años", diasAtras:20, descripcion:"Responsable de la organización, control y supervisión de bodegas, inventarios y procesos logísticos. Garantiza el flujo correcto de productos y materiales dentro de la empresa.", responsabilidades:["Supervisar entradas y salidas de inventario.","Controlar niveles de stock y generar reportes.","Coordinar al personal de bodega.","Verificar calidad y estado de los productos.","Organizar rutas internas de distribución."], requisitos:["Bachillerato o técnico en logística.","2 años de experiencia como encargado o asistente de bodega.","Manejo de inventarios y paquetes de office.","Buena organización y liderazgo."], beneficios:["Prestaciones de ley.","Oportunidad de crecimiento.","Ambiente laboral estable."] },
+        { id:2, cargo:"Diseñador gráfico junior", empresa:"Agencia Creativa CTRL", categoria:"Diseño gráfico", departamento:"San Salvador", ciudad:"San Salvador", salario:"$450 - $550 mensuales", rangoSalario:"$450 - $600", horario:"Lunes a viernes — 8:00 am a 5:00 pm", contrato:"Contrato a plazo fijo", jornada:"Tiempo completo", modalidad:"Híbrido", experiencia:"1 - 2 años", diasAtras:3, descripcion:"Creación de piezas visuales para redes sociales, materiales impresos y branding de clientes nacionales.", responsabilidades:["Diseñar piezas para redes sociales y campañas.","Editar fotos y videos cortos.","Trabajar con el equipo creativo.","Cumplir con tiempos de entrega."], requisitos:["Conocimiento en Adobe Illustrator y Photoshop.","Portafolio de trabajos previos.","Actitud proactiva y creativa."], beneficios:["Horario flexible.","Trabajo híbrido.","Capacitaciones mensuales."] },
+        { id:3, cargo:"Desarrollador web Frontend", empresa:"TechApps El Salvador", categoria:"Tecnología / IT", departamento:"Sonsonate", ciudad:"Sonsonate", salario:"$800 - $1,200 mensuales", rangoSalario:"$800 - $1,000", horario:"Lunes a viernes — flexible", contrato:"Contrato freelance", jornada:"Medio tiempo", modalidad:"Remoto", experiencia:"1 - 2 años", diasAtras:10, descripcion:"Desarrollo de interfaces modernas con React y Tailwind para aplicaciones web de clientes nacionales e internacionales.", responsabilidades:["Desarrollar componentes en React.","Integrar APIs REST.","Colaborar con diseñadores UX.","Mantener código limpio y documentado."], requisitos:["Conocimiento de HTML, CSS, JavaScript y React.","Manejo de Git.","Comunicación efectiva en remoto."], beneficios:["Trabajo 100% remoto.","Pago en dólares.","Horario flexible."] },
+        { id:4, cargo:"Asistente contable", empresa:"Auditoría & Finanzas S.A.", categoria:"Contabilidad y finanzas", departamento:"San Salvador", ciudad:"San Salvador", salario:"$400 - $500 mensuales", rangoSalario:"$300 - $450", horario:"Lunes a viernes — 8:00 am a 5:00 pm", contrato:"Contrato por tiempo indefinido", jornada:"Tiempo completo", modalidad:"Presencial", experiencia:"Sin experiencia", diasAtras:1, descripcion:"Apoyo al departamento de contabilidad en el registro de transacciones, conciliaciones bancarias y reportes financieros.", responsabilidades:["Registrar facturas y comprobantes.","Apoyar en declaraciones de IVA.","Elaborar reportes financieros básicos."], requisitos:["Estudiante o egresado de contaduría.","Manejo de Excel.","Puntualidad y orden."], beneficios:["Prestaciones de ley.","Oportunidad de aprendizaje.","Buen ambiente laboral."] },
+        { id:5, cargo:"Ejecutivo de ventas", empresa:"Seguros Confía", categoria:"Ventas y comercio", departamento:"Santa Ana", ciudad:"Santa Ana", salario:"Base $350 + comisiones", rangoSalario:"$300 - $450", horario:"Lunes a sábado — 8:00 am a 5:00 pm", contrato:"Contrato por tiempo indefinido", jornada:"Tiempo completo", modalidad:"Presencial", experiencia:"Menos de 1 año", diasAtras:5, descripcion:"Captación y atención de clientes para productos de seguros de vida, vehiculares y empresariales.", responsabilidades:["Prospectar clientes nuevos.","Presentar productos y cerrar ventas.","Dar seguimiento a cartera de clientes."], requisitos:["Bachillerato completo.","Actitud positiva y facilidad de palabra.","Vehículo propio (deseable)."], beneficios:["Comisiones sin techo.","Capacitación pagada.","Crecimiento rápido."] },
+        { id:6, cargo:"Enfermera clínica", empresa:"Clínica San José", categoria:"Salud", departamento:"La Libertad", ciudad:"Santa Tecla", salario:"$600 - $750 mensuales", rangoSalario:"$600 - $800", horario:"Rotativo", contrato:"Contrato por tiempo indefinido", jornada:"Tiempo completo", modalidad:"Presencial", experiencia:"2 - 3 años", diasAtras:7, descripcion:"Atención directa a pacientes en clínica privada, toma de signos vitales, aplicación de tratamientos y coordinación con médicos.", responsabilidades:["Atender y monitorear pacientes.","Administrar medicamentos.","Coordinar con el equipo médico."], requisitos:["Título de enfermería registrado.","2 años de experiencia clínica.","Junta de Vigilancia activa."], beneficios:["Seguro médico.","Estabilidad laboral.","Prestaciones de ley."] },
+        { id:7, cargo:"Community Manager", empresa:"Marketing360 SV", categoria:"Marketing y publicidad", departamento:"San Salvador", ciudad:"San Salvador", salario:"$500 - $700 mensuales", rangoSalario:"$450 - $600", horario:"Lunes a viernes — 8:00 am a 5:00 pm", contrato:"Contrato a plazo fijo", jornada:"Tiempo completo", modalidad:"Híbrido", experiencia:"1 - 2 años", diasAtras:2, descripcion:"Gestión de redes sociales, creación de contenido y análisis de métricas para marcas nacionales.", responsabilidades:["Crear y programar contenido.","Gestionar comunidades en redes.","Analizar métricas y generar reportes.","Coordinar campañas pagadas."], requisitos:["Experiencia en redes sociales de marcas.","Redacción creativa.","Conocimiento de Meta Ads y Google Ads."], beneficios:["Trabajo híbrido.","Equipo joven y dinámico.","Posibilidad de contrato indefinido."] }
+      ];
+
+      /* ESTADO DE FILTROS  */
+      var filtros = { orden:"", categoria:"", experiencia:"", salario:"", lugar:"" };
+
+      /* INICIAR AL CARGAR  */
+      window.onload = function () { aplicarFiltros(); };
+
+      /* GUARDAR FILTRO Y REFRESCAR  */
+      function setFiltro(tipo, valor, btnId, labelDefault) {
+        filtros[tipo] = valor;
+        var btn = document.getElementById(btnId);
+        if (btn) btn.textContent = valor ? valor : labelDefault;
+        aplicarFiltros();
+      }
+
+      /* FILTRAR Y ORDENAR  */
+      function aplicarFiltros() {
+        var textoCargo = document.getElementById("input-cargo").value.toLowerCase().trim();
+        var textoLugar = document.getElementById("input-lugar").value.toLowerCase().trim();
+
+        var resultado = empleosDB.filter(function (e) {
+          if (textoCargo && e.cargo.toLowerCase().indexOf(textoCargo) === -1 && e.categoria.toLowerCase().indexOf(textoCargo) === -1) return false;
+          if (textoLugar && e.ciudad.toLowerCase().indexOf(textoLugar) === -1 && e.departamento.toLowerCase().indexOf(textoLugar) === -1) return false;
+          if (filtros.categoria   && e.categoria   !== filtros.categoria)   return false;
+          if (filtros.experiencia && e.experiencia !== filtros.experiencia) return false;
+          if (filtros.salario     && e.rangoSalario !== filtros.salario)    return false;
+          if (filtros.lugar       && e.departamento !== filtros.lugar)      return false;
+          return true;
+        });
+
+        if (filtros.orden === "Reciente") resultado.sort(function (a,b) { return a.diasAtras - b.diasAtras; });
+        if (filtros.orden === "Antiguo")  resultado.sort(function (a,b) { return b.diasAtras - a.diasAtras; });
+
+        renderLista(resultado);
+      }
+
+      /* RENDERIZAR TARJETAS  */
+      function renderLista(lista) {
+        var cont = document.getElementById("lista-empleos");
+        cont.innerHTML = "";
+        if (lista.length === 0) {
+          cont.innerHTML = '<div class="alert alert-secondary text-center">No se encontraron empleos con esos criterios.</div>';
+          return;
+        }
+        lista.forEach(function (e) {
+          var dias = e.diasAtras === 1 ? "Hace 1 día" : "Hace " + e.diasAtras + " días";
+          cont.innerHTML +=
+            '<div class="card empleo-card-relative" id="card-' + e.id + '" style="cursor:pointer;" onclick="verDetalle(' + e.id + ')">' +
+              '<div class="card-body">' +
+                '<div class="d-flex justify-content-between">' +
+                  '<div>' +
+                    '<h5 class="card-title fw-bold mb-1">' + e.cargo + '</h5>' +
+                    '<p class="text-muted mb-2" style="font-size:13px;">' + e.empresa + '</p>' +
+                    '<p class="mb-2"><i class="bi bi-geo-alt-fill text-primary"></i><span class="ms-1">' + e.ciudad + ', ' + e.departamento + '</span></p>' +
+                    '<div class="info-line mb-1"><i class="bi bi-person-check"></i><span>' + e.contrato + '</span></div>' +
+                    '<div class="info-line mb-1"><i class="bi bi-clock"></i><span>' + e.jornada + '</span></div>' +
+                    '<div class="info-line mb-1"><i class="bi bi-building"></i><span>' + e.modalidad + '</span></div>' +
+                  '</div>' +
+                  '<div class="text-end fecha-publicacion fecha-card">' + dias + '</div>' +
+                '</div>' +
+                '<div class="mt-3 d-flex justify-content-end">' +
+                  '<button class="btn btn-lila boton-detalles" onclick="verDetalle(' + e.id + ')">Ver detalles</button>' +
+                '</div>' +
+              '</div>' +
+            '</div>';
+        });
+      }
+
+      /* MOSTRAR DETALLE  */
+      function verDetalle(id) {
+        var e = null;
+        for (var i = 0; i < empleosDB.length; i++) { if (empleosDB[i].id === id) { e = empleosDB[i]; break; } }
+        if (!e) return;
+
+        // Quitar resaltado anterior y resaltar la tarjeta activa
+        document.querySelectorAll("[id^='card-']").forEach(function (c) { c.style.border = ""; });
+        var activa = document.getElementById("card-" + id);
+        if (activa) activa.style.border = "2px solid #A869F0";
+
+        var resp = e.responsabilidades.map(function (r) { return "<li>" + r + "</li>"; }).join("");
+        var reqs = e.requisitos.map(function (r) { return "<li>" + r + "</li>"; }).join("");
+        var bens = e.beneficios.map(function (b) { return "<li>" + b + "</li>"; }).join("");
+
+        document.getElementById("detalle-empleo").innerHTML =
+          '<h4 class="fw-bold mb-1">' + e.cargo + ' — Detalles del puesto</h4>' +
+          '<p class="text-muted mb-3" style="font-size:13px;">' + e.empresa + '</p>' +
+          '<p><i class="bi bi-geo-alt-fill text-primary"></i> <strong>Ubicación:</strong> ' + e.ciudad + ', ' + e.departamento + '</p>' +
+          '<p><i class="bi bi-cash-stack text-success"></i> <strong>Salario:</strong> ' + e.salario + '</p>' +
+          '<p><i class="bi bi-clock"></i> <strong>Horario:</strong> ' + e.horario + '</p>' +
+          '<hr>' +
+          '<h5 class="fw-bold">Descripción del puesto</h5><p>' + e.descripcion + '</p>' +
+          '<h5 class="fw-bold mt-3">Responsabilidades</h5><ul>' + resp + '</ul>' +
+          '<h5 class="fw-bold mt-3">Requisitos</h5><ul>' + reqs + '</ul>' +
+          '<h5 class="fw-bold mt-3">Beneficios</h5><ul>' + bens + '</ul>' +
+          '<div class="d-flex justify-content-start mt-4">' +
+            '<button class="btn-postularme" onclick="alert(\'Solicitud enviada para: ' + e.cargo + '\')">' +
+              '<i class="bi bi-heart-fill me-2"></i> Postularme' +
+            '</button>' +
+          '</div>';
+      }
+    </script>
+    <script src="./js/monse-BD.js"></script> 
+    <script src="./js/usuario-monse.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

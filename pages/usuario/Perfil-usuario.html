@@ -48,92 +48,134 @@
     </div>
 
 <section class="p-10">
-    <div class="container ">
+    <div class="container">
         <div class="row">
             <div class="col-md-7 ms-auto">
                 <div class="bg-white rounded-4 p-4 text-start" style="border: 1px solid #000; min-height: 350px;">
                     <div class="card-body text-start rounded-4 p-4 text-start">
 
-
+                        <!-- FOTO Y DATOS BÁSICOS -->
                         <div class="d-flex align-items-start mb-3">
-                            <img src="./multimedia/perfil.png" width="80px" class="me-3">
+                            <label for="inputFoto" style="cursor:pointer;" title="Cambiar foto">
+                                <img id="foto-perfil" src="./multimedia/perfil.png" width="80px" class="me-3" style="border-radius:50%; object-fit:cover;">
+                            </label>
+                            <input type="file" id="inputFoto" accept="image/*" style="display:none;" onchange="cambiarFoto(this)">
                             <div>
-                               <h5>
-                                <span id="nombre">Monserrat Barillas</span>
-                                <i class="bi bi-pencil-square text-primary ms-3"
-                                    style="font-size:1.6rem; cursor:pointer;"
-                                    onclick="editarPerfil()"></i>
+                                <h5>
+                                    <span id="nombre">Monserrat Barillas</span>
+                                    <i class="bi bi-pencil-square text-primary ms-3"
+                                        style="font-size:1.6rem; cursor:pointer;"
+                                        onclick="editarPerfil()"></i>
                                 </h5>
-
                                 <p id="ciudad">Santa Ana</p>
-
                                 <p class="text-start">
-                                <i class="bi bi-envelope me-1"></i>
-                                <span id="correo">monsebarillas28@gmail.com</span>
-
-                                <i class="bi bi-telephone ms-2 me-2"></i>
-                                <span id="telefono">+503-60703230</span>
+                                    <i class="bi bi-envelope me-1"></i>
+                                    <span id="correo">monsebarillas28@gmail.com</span>
+                                    <i class="bi bi-telephone ms-2 me-2"></i>
+                                    <span id="telefono">+503-60703230</span>
                                 </p>
                             </div>
                         </div>
 
-
+                        <!-- FORMULARIO EDITAR PERFIL -->
                         <div id="formPerfil" style="display:none; background:#fff; padding:15px; border-radius:15px; margin-top:10px;">
-
-                        <h5>Editar Perfil</h5>
-
-                        <input type="text" id="editNombre" class="form-control mb-2" placeholder="Nombre">
-                        <input type="text" id="editCiudad" class="form-control mb-2" placeholder="Ciudad">
-                        <input type="text" id="editCorreo" class="form-control mb-2" placeholder="Correo">
-                        <input type="text" id="editTelefono" class="form-control mb-2" placeholder="Teléfono">
-
-                        <button class="btn btn-success w-100" onclick="guardarPerfil()">Guardar cambios</button>
-
+                            <h5>Editar Perfil</h5>
+                            <input type="text" id="editNombre" class="form-control mb-2" placeholder="Nombre">
+                            <input type="text" id="editCiudad" class="form-control mb-2" placeholder="Ciudad">
+                            <input type="text" id="editCorreo" class="form-control mb-2" placeholder="Correo">
+                            <input type="text" id="editTelefono" class="form-control mb-2" placeholder="Teléfono">
+                            <button class="btn btn-success w-100" onclick="guardarPerfil()">Guardar cambios</button>
                         </div>
-                        <h3>
-                        Experiencias laborales
+                        <!-- EXPERIENCIAS LABORALES -->
+                        <h3>Experiencias laborales
+                            <i class="bi bi-pencil-square text-primary ms-3" style="font-size:1.2rem; cursor:pointer;" onclick="abrirFormExp(-1)"></i>
                         </h3>
-
-                        <div id="exp-texto">
-                        <p>Analista de Sistemas</p>
-                        <p>Detección de fallos</p>
+                        <div id="exp-lista"></div>
+                        <div id="formExperiencia" style="display:none; background:#f8f8f8; padding:15px; border-radius:15px; margin-top:10px;">
+                            <h5 id="formExp-titulo">Agregar Experiencia</h5>
+                            <input type="text" id="editPuesto" class="form-control mb-2" placeholder="Puesto o cargo">
+                            <input type="text" id="editEmpresaExp" class="form-control mb-2" placeholder="Empresa">
+                            <input type="text" id="editDescExp" class="form-control mb-2" placeholder="Período (ej: 2022 - 2024)">
+                            <input type="hidden" id="editExpIndex" value="-1">
+                            <button class="btn btn-success w-100 mt-1" onclick="guardarExperiencia()">Guardar</button>
+                            <button class="btn btn-outline-secondary w-100 mt-2" onclick="cerrarFormExp()">Cancelar</button>
                         </div>
 
-                        <div id="exp-editar" style="display:none;">
-                        <input type="text" id="inputPuesto" class="form-control mb-2">
-                        <textarea id="inputDesc" class="form-control mb-2"></textarea>
-                        </div>
-
+                        <!-- ESTUDIOS -->
                         <h3>Estudios
-                            <i class="bi bi-pencil text-primary ms-5"></i>
+                            <i class="bi bi-pencil-square text-primary ms-3" style="font-size:1.2rem; cursor:pointer;" onclick="abrirFormEstudio(-1)"></i>
                         </h3>
-                        <p>Bachillerato/Educación Media</p>
-                        <p>Colegio Juan Napier Chalchuapa<br>Enero 2020- Diciembre 2022</p>
+                        <div id="estudios-lista"></div>
+                        <div id="formEstudios" style="display:none; background:#f8f8f8; padding:15px; border-radius:15px; margin-top:10px;">
+                            <h5 id="formEst-titulo">Agregar Estudio</h5>
+                            <input type="text" id="editNivel" class="form-control mb-2" placeholder="Nivel educativo">
+                            <input type="text" id="editInstitucion" class="form-control mb-2" placeholder="Institución">
+                            <input type="text" id="editPeriodo" class="form-control mb-2" placeholder="Período (ej: Enero 2020 - Diciembre 2022)">
+                            <input type="hidden" id="editEstIndex" value="-1">
+                            <button class="btn btn-success w-100 mt-1" onclick="guardarEstudio()">Guardar</button>
+                            <button class="btn btn-outline-secondary w-100 mt-2" onclick="cerrarFormEstudio()">Cancelar</button>
+                        </div>
 
-                        <h3>Conocimientos</h3>
-                        <button type="button" class="btn btn-outline-secondary text-primary rounded-4 mb-3 me-2">Ventas
-                            <i class="bi bi-x-lg"></i>
-                        </button>
-                        <button type="button" class="btn btn-outline-secondary text-primary rounded-4 mb-3 me-2">Inventario
-                            <i class="bi bi-x-lg"></i>
-                        </button>
-                        <button type="button" class="btn btn-outline-secondary text-primary rounded-4 mb-3">Añadir
-                            <i class="bi bi-plus"></i>
-                        </button>
+                        <!-- CONOCIMIENTOS -->
+                        <h3>Conocimientos
+                            <i class="bi bi-pencil-square text-primary ms-3" style="font-size:1.2rem; cursor:pointer;" onclick="editarConocimientos()"></i>
+                        </h3>
+                        <div id="conocimientos-botones"></div>
+                        <div id="formConocimientos" style="display:none; background:#f8f8f8; padding:15px; border-radius:15px; margin-top:10px;">
+                            <h5>Editar Conocimientos</h5>
+                            <input type="text" id="editConocimientos" class="form-control mb-2" placeholder="Ej: Ventas, Inventario, Excel">
+                            <small class="text-muted">Separa cada conocimiento con una coma</small>
+                            <button class="btn btn-success w-100 mt-2" onclick="guardarConocimientos()">Guardar</button>
+                            <button class="btn btn-outline-secondary w-100 mt-2" onclick="document.getElementById('formConocimientos').style.display='none'">Cancelar</button>
+                        </div>
 
+                        <!-- DESPLAZAMIENTO Y MOVILIDAD -->
                         <h3>Desplazamiento y movilidad
-                            <i class="bi bi-pencil text-primary ms-5"></i>
+                            <i class="bi bi-pencil-square text-primary ms-3" style="font-size:1.2rem; cursor:pointer;" onclick="editarMovilidad()"></i>
                         </h3>
-                        <p><i class="bi bi-circle-fill text-primary"></i> Disponibilidad para viajar</p>
-                        <p><i class="bi bi-circle-fill text-primary"></i> Disponibilidad para cambiar de residencia</p>
-                        <p><i class="bi bi-circle-fill text-primary"></i> No tengo vehiculo propio</p>
+                        <div id="movilidad-texto"></div>
+                        <div id="formMovilidad" style="display:none; background:#f8f8f8; padding:15px; border-radius:15px; margin-top:10px;">
+                            <h5>Editar Movilidad</h5>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="mov1" value="Disponibilidad para viajar">
+                                <label class="form-check-label" for="mov1">Disponibilidad para viajar</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="mov2" value="Disponibilidad para cambiar de residencia">
+                                <label class="form-check-label" for="mov2">Disponibilidad para cambiar de residencia</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="mov3" value="No tengo vehículo propio">
+                                <label class="form-check-label" for="mov3">No tengo vehículo propio</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="mov4" value="Tengo vehículo propio">
+                                <label class="form-check-label" for="mov4">Tengo vehículo propio</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="mov5" value="Solo trabajo en mi ciudad">
+                                <label class="form-check-label" for="mov5">Solo trabajo en mi ciudad</label>
+                            </div>
+                            <button class="btn btn-success w-100 mt-2" onclick="guardarMovilidad()">Guardar</button>
+                            <button class="btn btn-outline-secondary w-100 mt-2" onclick="document.getElementById('formMovilidad').style.display='none'">Cancelar</button>
+                        </div>
+
+                        <!-- CV -->
+                        <h3 class="mt-3">Currículum (CV)
+                            <i class="bi bi-file-earmark-text text-primary ms-3"></i>
+                        </h3>
+                        <div id="cv-zona">
+                            <p class="text-muted">No has subido un CV aún.</p>
+                            <label for="inputCV" class="btn btn-outline-primary rounded-4">
+                                <i class="bi bi-upload me-2"></i> Subir CV (PDF)
+                            </label>
+                            <input type="file" id="inputCV" accept=".pdf" style="display:none;" onchange="subirCV(this)">
+                        </div>
+
                     </div>
                 </div>
             </div>
-          
-
         <div class="col-md-5 ms-auto">
-
 
             <div class="bg-white rounded-4 p-4" style="border:1px solid #000;">
             <h5><b>Estadísticas del Perfil:</b></h5>
