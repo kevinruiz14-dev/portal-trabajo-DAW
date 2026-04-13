@@ -1,0 +1,29 @@
+body {
+  background-color: #f4eff8 !important;
+}
+
+.btn-tipo {
+  border: none !important;
+  background: transparent;
+  padding: 6px 14px;
+  border-radius: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.btn-tipo.activo {
+  background-color: #d8cce3 !important;
+  color: #000;
+}
+
+body.usuario {
+  background-color: #c9c3d6 !important;
+}
+
+body.empresa {
+  background-color: #d1c8e0 !important;
+}
+
+body.admin {
+  background-color: #cfcbda !important;
+}
