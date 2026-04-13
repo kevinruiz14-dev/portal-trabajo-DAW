@@ -637,12 +637,112 @@ function renderPostulaciones() {
   });
 }
 
+// REGISTRO DE UN USUARIO 
+
+// REGISTRO
+function registrarUsuario() {
+
+  let correo = document.getElementById("correo").value;
+  let password = document.getElementById("password").value;
+  let nombres = document.getElementById("nombres").value;
+  let apellidos = document.getElementById("apellidos").value;
+  let telefono1 = document.getElementById("telefono1").value;
+  let ciudad = document.getElementById("ciudad").value;
+
+  if (!correo || !password || !nombres || !apellidos) {
+    alert("Completa los campos obligatorios");
+    return;
+  }
+
+  let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+  let existe = usuarios.find(u => u.correo === correo);
+
+  if (existe) {
+    alert("Este usuario ya existe");
+    return;
+  }
+
+  let nuevoUsuario = {
+    correo,
+    password,
+    nombres,
+    apellidos,
+    telefono1,
+    ciudad
+  };
+
+  usuarios.push(nuevoUsuario);
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+  localStorage.setItem("usuarioActivo", JSON.stringify(nuevoUsuario));
+
+  alert("Registro exitoso");
+
+  window.location.href = "perfil.html";
+}
+
+
+// LOGIN
+function login() {
+
+  let correo = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+
+  let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+  let usuario = usuarios.find(u => u.correo === correo && u.password === password);
+
+  if (!usuario) {
+    alert("Datos incorrectos");
+    return;
+  }
+
+  localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
+
+  window.location.href = "index.html";
+}
+
+
+// PERFIL
+function cargarPerfil() {
+
+  let usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
+
+  if (!usuario) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  document.getElementById("nombre").innerText =
+    usuario.nombres + " " + usuario.apellidos;
+
+  document.getElementById("correo").innerText = usuario.correo;
+  document.getElementById("telefono").innerText = usuario.telefono1;
+  document.getElementById("ciudad").innerText = usuario.ciudad;
+}
+
+
+// CERRAR SESIÓN
+function cerrarSesion() {
+  localStorage.removeItem("usuarioActivo");
+  window.location.href = "Inicio-Sesion-general.html";
+}
+
 // ── INICIAR AL CARGAR 
 
-document.addEventListener("DOMContentLoaded", function() {
-  cargarPerfil();
-  if (document.getElementById("lista-empleos")) aplicarFiltros();
-})
+function cargarPerfil() {
+
+  let usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
+
+  if (!usuario) return;
+
+  document.getElementById("nombre").innerText =
+    usuario.nombres + " " + usuario.apellidos;
+  document.getElementById("correo").innerText = usuario.correo;
+  document.getElementById("telefono").innerText = usuario.telefono1;
+  document.getElementById("ciudad").innerText = usuario.ciudad;
+}
 
 document.addEventListener("DOMContentLoaded", function() {
   if (document.getElementById("lista-favoritos")) {

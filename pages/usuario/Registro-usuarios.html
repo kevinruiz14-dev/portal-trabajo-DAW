@@ -19,12 +19,12 @@
 
       <div class="mb-3">
         <label>Correo electrónico *</label>
-        <input type="email" class="form-control" />
+        <input type="email" id="correo" class="form-control" />
       </div>
 
       <div class="mb-3">
         <label>Contraseña *</label>
-        <input type="password" class="form-control" />
+        <input type="password" id="password" class="form-control" />
       </div>
 
       <hr class="divider" />
@@ -33,17 +33,17 @@
 
       <div class="mb-3">
         <label>Nombres *</label>
-        <input type="text" class="form-control" />
+        <input type="text" id="nombres" class="form-control" />
       </div>
 
       <div class="mb-3">
         <label>Apellidos *</label>
-        <input type="text" class="form-control" />
+        <input type="text" id="apellidos" class="form-control" />
       </div>
 
       <div class="mb-3">
         <label>Nacionalidad *</label>
-        <select class="form-select">
+        <select id="nacionalidad" class="form-select">
           <option>Seleccione</option>
           <option>Salvadoreño</option>
           <option>Guatemalteco</option>
@@ -53,22 +53,22 @@
       <label>Género *</label>
       <div class="d-flex mb-3">
         <div class="form-check">
-          <input type="radio" class="form-check-input" name="genero" />
+          <input type="radio" name="genero" value="Femenino">
           <label class="form-check-label">Femenino</label>
         </div>
 
         <div class="form-check">
-          <input type="radio" class="form-check-input" name="genero" />
+          <input type="radio" name="genero" value="Masculino">
           <label class="form-check-label">Masculino</label>
         </div>
 
         <div class="form-check">
-          <input type="radio" class="form-check-input" name="genero" />
+          <input type="radio" name="genero" value="Prefiero no decirlo">
           <label class="form-check-label">Prefiero no decirlo</label>
         </div>
 
         <div class="form-check">
-          <input type="radio" class="form-check-input" name="genero" />
+          <input type="radio" name="genero" value="Otro">
           <label class="form-check-label">Otro</label>
         </div>
       </div>
@@ -127,19 +127,19 @@
 
       <div class="mb-3">
         <label>Ciudad *</label>
-        <select class="form-select">
+        <select id="ciudad" class="form-select">
           <option>Seleccione</option>
         </select>
       </div>
 
       <div class="mb-3">
         <label>Teléfono de contacto 1 *</label>
-        <input type="text" class="form-control" />
+        <input type="text" id="telefono1" class="form-control" />
       </div>
 
       <div class="mb-3">
         <label>Teléfono de contacto 2 (Opcional)</label>
-        <input type="text" class="form-control" />
+        <input type="text" id="telefono2" class="form-control" />
       </div>
 
       <div class="mb-3">
@@ -192,8 +192,8 @@
         interés. También recibira información sobre artículos útiles para su
         desarrollo profesional.*
       </p>
-      <button class="btn-registro w-100">Registrarme</button>
+      <button class="btn-registro w-100" onclick="registrarUsuario()">Registrarme</button>
     </div>
-    <script src="./js/usuario.js"></script>
+    <script src="./js/usuario-monse.js"></script>
   </body>
 </html>
