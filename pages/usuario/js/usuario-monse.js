@@ -682,25 +682,44 @@ function registrarUsuario() {
   window.location.href = "perfil.html";
 }
 
+// LOGIN JUNTO
 
-// LOGIN
 function login() {
 
   let correo = document.getElementById("email").value;
   let password = document.getElementById("password").value;
 
-  let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+  // Detectar tipo
+  let tipo = document.body.classList.contains("empresa") ? "empresa" : "usuario";
 
-  let usuario = usuarios.find(u => u.correo === correo && u.password === password);
+  if (tipo === "usuario") {
 
-  if (!usuario) {
-    alert("Datos incorrectos");
-    return;
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    let usuario = usuarios.find(u => u.correo === correo && u.password === password);
+
+    if (!usuario) {
+      alert("Datos incorrectos");
+      return;
+    }
+
+    localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
+    window.location.href = "index.html";
+
+  } else if (tipo === "empresa") {
+
+    let empresas = JSON.parse(localStorage.getItem("empresas")) || [];
+
+    let empresa = empresas.find(e => e.correo === correo && e.password === password);
+
+    if (!empresa) {
+      alert("Datos incorrectos");
+      return;
+    }
+
+    localStorage.setItem("empresaActiva", JSON.stringify(empresa));
+    window.location.href = "../empresas/PaginaPrincipalindex.html";
   }
-
-  localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
-
-  window.location.href = "index.html";
 }
 
 
